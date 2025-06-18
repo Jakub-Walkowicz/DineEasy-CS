@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HT1lRkq3aAY=",
+  "dgSpecHash": "/upZMEeJD+U=",
   "success": true,
   "projectFilePath": "/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/DineEasy.Infrastructure.csproj",
   "expectedPackageFiles": [
@@ -31,7 +31,6 @@
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/mono.texttemplating/2.2.1/mono.texttemplating.2.2.1.nupkg.sha512",
-    "/Users/jakubwalkowicz/.nuget/packages/sqlite/3.13.0/sqlite.3.13.0.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/sqlitepclraw.bundle_e_sqlite3/2.1.6/sqlitepclraw.bundle_e_sqlite3.2.1.6.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/sqlitepclraw.core/2.1.6/sqlitepclraw.core.2.1.6.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/sqlitepclraw.lib.e_sqlite3/2.1.6/sqlitepclraw.lib.e_sqlite3.2.1.6.nupkg.sha512",

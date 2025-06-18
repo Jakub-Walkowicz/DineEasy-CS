@@ -13,7 +13,8 @@ public static class ReservationExtensions
             CustomerId = reservation.CustomerId,
             ReservationDateTime = reservation.ReservationDateTime,
             Status = reservation.Status,
-            TableId = reservation.TableId
+            TableId = reservation.TableId,
+            Duration = reservation.Duration // Add this line
         };
     } 
     
@@ -24,15 +25,15 @@ public static class ReservationExtensions
             CustomerId = dto.CustomerId,
             PartySize = dto.PartySize,
             ReservationDateTime = dto.ReservationDateTime,
-            SpecialRequests = dto.SpecialRequests,
+            Duration = dto.Duration,
+            SpecialRequests = dto.SpecialRequests ?? string.Empty,
             CreatedAt = DateTime.UtcNow,
             TableId = dto.TableId
         };
     }
 
-    public static List<ReservationDto?> ToDtos(this IEnumerable<Reservation> reservations)
+    public static List<ReservationDto> ToDtos(this IEnumerable<Reservation> reservations)
     {
-        return reservations.Select(r => r.ToDto()).ToList();
+        return reservations.Select(r => r.ToDto()).Where(dto => dto != null).Cast<ReservationDto>().ToList();
     }
-    
 }

@@ -11,6 +11,11 @@ public class UnitOfWork : IUnitOfWork
     private IReservationRepository? _reservations;
     private ITableRepository? _tables;
     private ITimeSlotRepository? _timeSlots;
+
+    public UnitOfWork(DineEasyDbContext dbContext)
+    {
+        _dbContext = dbContext;
+    }
     
     public ICustomerRepository Customers =>
         _customers ??= new CustomerRepository(_dbContext);

@@ -61,7 +61,7 @@ public class ReservationService : IReservationService
         return true;
     }
 
-    public async Task<List<ReservationDto?>> GetAllAsync()
+    public async Task<List<ReservationDto>> GetAllAsync()
     {
         var reservations = await _unitOfWork.Reservations.GetAllAsync();
         return reservations.ToDtos();

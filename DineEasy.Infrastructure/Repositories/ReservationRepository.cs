@@ -62,17 +62,18 @@ public class ReservationRepository : IReservationRepository
 
     public async Task<bool> IsTableAvailableAsync(long tableId, DateTime requestedDateTime, int durationHours = 2)
     {
-        // First check if table exists and is active
         var table = await _dbContext.Tables.FindAsync(tableId);
         if (table == null || !table.IsActive)
             return false;
-        
+    
         var requestedEndTime = requestedDateTime.AddHours(durationHours);
         
-         return await _dbContext.Reservations
-             .Where(r => r.TableId == tableId &&
-                         r.ReservationDateTime < requestedEndTime &&
-                         r.ReservationDateTime.AddHours(durationHours) > requestedDateTime)
-             .AnyAsync();
+        var hasConflict = await _dbContext.Reservations
+            .Where(r => r.TableId == tableId &&
+                        r.ReservationDateTime < requestedEndTime &&
+                        r.ReservationDateTime.AddHours(r.Duration) > requestedDateTime)
+            .AnyAsync();
+    
+        return !hasConflict; 
     }
 }

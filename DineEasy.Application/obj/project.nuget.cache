@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "HyPNHfEmr4U=",
+  "dgSpecHash": "unfhZhOpQnU=",
   "success": true,
   "projectFilePath": "/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/DineEasy.Application.csproj",
   "expectedPackageFiles": [
@@ -15,7 +15,6 @@
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.extensions.logging.abstractions/8.0.0/microsoft.extensions.logging.abstractions.8.0.0.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.extensions.options/8.0.0/microsoft.extensions.options.8.0.0.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.extensions.primitives/8.0.0/microsoft.extensions.primitives.8.0.0.nupkg.sha512",
-    "/Users/jakubwalkowicz/.nuget/packages/sqlite/3.13.0/sqlite.3.13.0.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.netcore.app.ref/8.0.17/microsoft.netcore.app.ref.8.0.17.nupkg.sha512",
     "/Users/jakubwalkowicz/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.17/microsoft.aspnetcore.app.ref.8.0.17.nupkg.sha512"
   ],
