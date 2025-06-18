@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "bONyHsk0gzU=",
+  "success": true,
+  "projectFilePath": "/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/DineEasy.Domain.csproj",
+  "expectedPackageFiles": [
+    "/Users/jakubwalkowicz/.nuget/packages/sqlite/3.13.0/sqlite.3.13.0.nupkg.sha512",
+    "/Users/jakubwalkowicz/.nuget/packages/microsoft.netcore.app.ref/8.0.17/microsoft.netcore.app.ref.8.0.17.nupkg.sha512",
+    "/Users/jakubwalkowicz/.nuget/packages/microsoft.aspnetcore.app.ref/8.0.17/microsoft.aspnetcore.app.ref.8.0.17.nupkg.sha512"
+  ],
+  "logs": []
+}

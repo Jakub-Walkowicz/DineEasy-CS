@@ -1,0 +1,6 @@
+@DineEasy.WebAPI_HostAddress = http://localhost:5049
+
+GET {{DineEasy.WebAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
