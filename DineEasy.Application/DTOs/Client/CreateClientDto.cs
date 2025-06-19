@@ -2,7 +2,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace DineEasy.Application.DTOs.Customer;
 
-public class CreateCustomerDto
+public class CreateClientDto
 {
     [Required]
     [MaxLength(50)]

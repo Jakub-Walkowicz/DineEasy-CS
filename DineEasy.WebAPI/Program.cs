@@ -28,7 +28,7 @@ builder.Services.AddDbContext<DineEasyDbContext>(options =>
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<IReservationService, ReservationService>();
-builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<ITableService, TableService>();
 builder.Services.AddScoped<ITimeSlotService, TimeSlotService>();
 

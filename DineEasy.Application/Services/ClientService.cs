@@ -5,32 +5,38 @@ using DineEasy.Domain.Interfaces;
 
 namespace DineEasy.Application.Services;
 
-public class CustomerService : ICustomerService
+public class ClientService : IClientService
 {
     
     private readonly IUnitOfWork _unitOfWork;
 
-    public CustomerService(IUnitOfWork unitOfWork)
+    public ClientService(IUnitOfWork unitOfWork)
     {
         _unitOfWork = unitOfWork;
     }
-    
-    public async Task<CustomerDto> CreateAsync(CreateCustomerDto dto)
+
+    public async Task<ClientDto?> GetByIdAsync(int id)
+    {
+        var customer = await _unitOfWork.Clients.GetByIdAsync(id);
+        return customer?.ToDto();
+    }
+
+    public async Task<ClientDto> CreateAsync(CreateClientDto dto)
     {
         var customer = dto.ToEntity();
 
-        await _unitOfWork.Customers.AddAsync(customer);
+        await _unitOfWork.Clients.AddAsync(customer);
         await _unitOfWork.SaveChangesAsync();
         return customer.ToDto();
     } 
 
     public async Task<bool> DeleteAsync(int id)
     {
-        var customer = await _unitOfWork.Customers.GetByIdAsync(id);
+        var customer = await _unitOfWork.Clients.GetByIdAsync(id);
 
         if (customer == null) return false;
 
-        _unitOfWork.Customers.Delete(customer);
+        _unitOfWork.Clients.Delete(customer);
         
         await _unitOfWork.SaveChangesAsync();
         return true;
