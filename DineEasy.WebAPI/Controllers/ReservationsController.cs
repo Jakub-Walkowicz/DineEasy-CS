@@ -144,4 +144,40 @@ public class ReservationsController : ControllerBase
             return StatusCode(500, "An unexpected error occurred while deleting the reservation");
         }
     }
+    
+    [HttpGet("user/{userId}")]
+    public async Task<ActionResult<IEnumerable<ReservationDto>>> GetByUserId(int userId)
+    {
+        try
+        {
+            if (userId <= 0)
+            {
+                _logger.LogWarning("Invalid user ID provided: {UserId}", userId);
+                return BadRequest("User ID must be greater than zero");
+            }
+
+            _logger.LogInformation("Getting reservations for user ID: {UserId}", userId);
+            var reservations = await _reservationService.GetAllByUserIdAsync(userId);
+        
+            _logger.LogDebug("Retrieved {Count} reservations for user ID: {UserId}", 
+                reservations.Count(), userId);
+        
+            return Ok(reservations);
+        }
+        catch (BadRequestException ex)
+        {
+            _logger.LogWarning("Get reservations by user failed - bad request: {Message}", ex.Message);
+            return BadRequest(new { Error = "Invalid request", Message = ex.Message });
+        }
+        catch (Exception ex) when (ex.Message.Contains("not found"))
+        {
+            _logger.LogWarning("Get reservations by user failed - user not found: {Message}", ex.Message);
+            return NotFound(new { Error = "User not found", Message = ex.Message });
+        }
+        catch (Exception ex)
+        {
+            _logger.LogError(ex, "Unexpected error retrieving reservations for user ID: {UserId}", userId);
+            return StatusCode(500, "An unexpected error occurred while retrieving user reservations");
+        }
+    }
 }
