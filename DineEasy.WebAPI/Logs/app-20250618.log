@@ -206,3 +206,1001 @@ System.ArgumentException: Customer with ID 0 not found
 2025-06-18 17:43:10.229 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.ReservationsController.Create (DineEasy.WebAPI) in 161.9613ms
 2025-06-18 17:43:10.229 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.ReservationsController.Create (DineEasy.WebAPI)'
 2025-06-18 17:43:10.229 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Reservations - 400 null text/plain; charset=utf-8 187.4912ms
+2025-06-18 17:44:12.290 +02:00 [INF] Application is shutting down...
+2025-06-18 17:53:48.975 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 17:53:49.038 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 17:53:49.040 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 17:53:49.040 +02:00 [INF] Hosting environment: Development
+2025-06-18 17:53:49.040 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 17:53:49.224 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 17:53:49.365 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 152.2183ms
+2025-06-18 17:53:49.436 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 17:53:49.542 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 106.5182ms
+2025-06-18 17:53:58.163 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 109
+2025-06-18 17:53:58.171 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:53:58.173 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 17:53:58.178 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:53:58.211 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:53:58.261 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-18 17:53:58.286 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 72.5103ms
+2025-06-18 17:53:58.286 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:53:58.286 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null application/problem+json; charset=utf-8 123.7293ms
+2025-06-18 17:54:06.011 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 112
+2025-06-18 17:54:06.020 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:54:06.020 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:54:06.020 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:54:06.026 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:54:06.027 +02:00 [INF] Creating new customer with email: user@example.com
+2025-06-18 17:54:06.220 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (Size = 6), @p3='?' (Size = 6), @p4='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("CreatedAt", "Email", "FirstName", "LastName", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-18 17:54:06.244 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 215.5088ms.
+2025-06-18 17:54:06.245 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'DineEasy.Application.DTOs.Customer.CustomerDto'.
+2025-06-18 17:54:06.260 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 239.3201ms
+2025-06-18 17:54:06.260 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:54:06.260 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 201 null application/json; charset=utf-8 248.6272ms
+2025-06-18 17:54:14.758 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/1 - null null
+2025-06-18 17:54:14.760 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 17:54:14.766 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:54:14.771 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:54:14.773 +02:00 [INF] Getting customer with ID: 1
+2025-06-18 17:54:14.773 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 1.3947ms.
+2025-06-18 17:54:14.773 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-18 17:54:14.788 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 21.7807ms
+2025-06-18 17:54:14.789 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 17:54:14.789 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/1 - 200 null application/json; charset=utf-8 30.4713ms
+2025-06-18 17:54:14.999 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/1 - null null
+2025-06-18 17:54:15.000 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 17:54:15.000 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:54:15.000 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:54:15.000 +02:00 [INF] Getting customer with ID: 1
+2025-06-18 17:54:15.000 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 0.0776ms.
+2025-06-18 17:54:15.001 +02:00 [INF] Executing OkObjectResult, writing value of type '<>f__AnonymousType1`1[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]'.
+2025-06-18 17:54:15.001 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 1.034ms
+2025-06-18 17:54:15.001 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 17:54:15.001 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/1 - 200 null application/json; charset=utf-8 1.5442ms
+2025-06-18 17:54:37.643 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Tables - application/json 83
+2025-06-18 17:54:37.644 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:54:37.644 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI)'
+2025-06-18 17:54:37.649 +02:00 [INF] Route matched with {action = "Create", controller = "Tables"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Table.TableDto]] Create(DineEasy.Application.DTOs.Table.CreateTableDto) on controller DineEasy.WebAPI.Controllers.TablesController (DineEasy.WebAPI).
+2025-06-18 17:54:37.668 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:54:37.670 +02:00 [INF] Creating new table number: 0
+2025-06-18 17:54:37.735 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 6), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tables" ("Capacity", "IsActive", "Location", "TableNumber")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2025-06-18 17:54:37.738 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 69.1225ms.
+2025-06-18 17:54:37.738 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'DineEasy.Application.DTOs.Table.TableDto'.
+2025-06-18 17:54:37.739 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI) in 89.7356ms
+2025-06-18 17:54:37.739 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI)'
+2025-06-18 17:54:37.739 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Tables - 201 null application/json; charset=utf-8 96.535ms
+2025-06-18 17:54:44.486 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Tables - null null
+2025-06-18 17:54:44.487 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI)'
+2025-06-18 17:54:44.491 +02:00 [INF] Route matched with {action = "GetAll", controller = "Tables"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[DineEasy.Application.DTOs.Table.TableDto]]] GetAll() on controller DineEasy.WebAPI.Controllers.TablesController (DineEasy.WebAPI).
+2025-06-18 17:54:44.492 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:54:44.493 +02:00 [INF] Getting all tables
+2025-06-18 17:54:44.632 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Capacity", "t"."IsActive", "t"."Location", "t"."TableNumber"
+FROM "Tables" AS "t"
+2025-06-18 17:54:44.636 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 144.4524ms.
+2025-06-18 17:54:44.636 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DineEasy.Application.DTOs.Table.TableDto, DineEasy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-18 17:54:44.637 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI) in 145.827ms
+2025-06-18 17:54:44.637 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI)'
+2025-06-18 17:54:44.637 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Tables - 200 null application/json; charset=utf-8 150.4838ms
+2025-06-18 17:54:53.802 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Tables - application/json 83
+2025-06-18 17:54:53.802 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:54:53.803 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI)'
+2025-06-18 17:54:53.803 +02:00 [INF] Route matched with {action = "Create", controller = "Tables"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Table.TableDto]] Create(DineEasy.Application.DTOs.Table.CreateTableDto) on controller DineEasy.WebAPI.Controllers.TablesController (DineEasy.WebAPI).
+2025-06-18 17:54:53.805 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:54:53.805 +02:00 [INF] Creating new table number: 0
+2025-06-18 17:54:53.811 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?' (DbType = Boolean), @p2='?' (Size = 6), @p3='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tables" ("Capacity", "IsActive", "Location", "TableNumber")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2025-06-18 17:54:53.812 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 7.1791ms.
+2025-06-18 17:54:53.812 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'DineEasy.Application.DTOs.Table.TableDto'.
+2025-06-18 17:54:53.813 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI) in 9.9485ms
+2025-06-18 17:54:53.813 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.TablesController.Create (DineEasy.WebAPI)'
+2025-06-18 17:54:53.813 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Tables - 201 null application/json; charset=utf-8 10.9493ms
+2025-06-18 17:55:02.994 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Tables - null null
+2025-06-18 17:55:02.994 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI)'
+2025-06-18 17:55:02.995 +02:00 [INF] Route matched with {action = "GetAll", controller = "Tables"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[DineEasy.Application.DTOs.Table.TableDto]]] GetAll() on controller DineEasy.WebAPI.Controllers.TablesController (DineEasy.WebAPI).
+2025-06-18 17:55:02.995 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:55:02.996 +02:00 [INF] Getting all tables
+2025-06-18 17:55:02.998 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."Capacity", "t"."IsActive", "t"."Location", "t"."TableNumber"
+FROM "Tables" AS "t"
+2025-06-18 17:55:02.999 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.0178ms.
+2025-06-18 17:55:02.999 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DineEasy.Application.DTOs.Table.TableDto, DineEasy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-18 17:55:02.999 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI) in 4.4846ms
+2025-06-18 17:55:02.999 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.TablesController.GetAll (DineEasy.WebAPI)'
+2025-06-18 17:55:03.000 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Tables - 200 null application/json; charset=utf-8 5.8235ms
+2025-06-18 17:55:11.834 +02:00 [INF] Application is shutting down...
+2025-06-18 17:57:08.534 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 17:57:08.603 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 17:57:08.605 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 17:57:08.605 +02:00 [INF] Hosting environment: Development
+2025-06-18 17:57:08.605 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 17:57:08.926 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 17:57:09.057 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 132.2551ms
+2025-06-18 17:57:09.113 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 17:57:09.203 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 90.5094ms
+2025-06-18 17:57:16.221 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 109
+2025-06-18 17:57:16.231 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:57:16.233 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 17:57:16.238 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:57:16.267 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:57:16.314 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-18 17:57:16.337 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 68.1206ms
+2025-06-18 17:57:16.337 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:57:16.338 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null application/problem+json; charset=utf-8 116.6716ms
+2025-06-18 17:57:29.435 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 112
+2025-06-18 17:57:29.438 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:57:29.438 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:57:29.439 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:57:29.451 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:57:29.453 +02:00 [INF] Creating new customer with email: user@example.com
+2025-06-18 17:57:29.677 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (Size = 6), @p3='?' (Size = 6), @p4='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("CreatedAt", "Email", "FirstName", "LastName", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-18 17:57:29.696 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'DineEasy.Infrastructure.Data.DineEasyDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-18 17:57:29.697 +02:00 [ERR] Error creating customer
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at DineEasy.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/Repositories/UnitOfWork.cs:line 34
+   at DineEasy.Application.Services.CustomerService.CreateAsync(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/CustomerService.cs:line 33
+   at DineEasy.WebAPI.Controllers.CustomersController.Create(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Controllers/CustomersController.cs:line 18
+2025-06-18 17:57:29.703 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 250.1176ms.
+2025-06-18 17:57:29.704 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-18 17:57:29.704 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 265.435ms
+2025-06-18 17:57:29.704 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:57:29.704 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null text/plain; charset=utf-8 269.2526ms
+2025-06-18 17:57:36.588 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 112
+2025-06-18 17:57:36.589 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:57:36.590 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:57:36.590 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:57:36.594 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:57:36.595 +02:00 [INF] Creating new customer with email: user@example.com
+2025-06-18 17:57:36.655 +02:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (Size = 6), @p3='?' (Size = 6), @p4='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("CreatedAt", "Email", "FirstName", "LastName", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-18 17:57:36.658 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'DineEasy.Infrastructure.Data.DineEasyDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-18 17:57:36.659 +02:00 [ERR] Error creating customer
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at DineEasy.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/Repositories/UnitOfWork.cs:line 34
+   at DineEasy.Application.Services.CustomerService.CreateAsync(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/CustomerService.cs:line 33
+   at DineEasy.WebAPI.Controllers.CustomersController.Create(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Controllers/CustomersController.cs:line 18
+2025-06-18 17:57:36.660 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 65.662ms.
+2025-06-18 17:57:36.660 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-18 17:57:36.660 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 69.9417ms
+2025-06-18 17:57:36.660 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:57:36.660 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null text/plain; charset=utf-8 73.0026ms
+2025-06-18 17:58:07.311 +02:00 [INF] Application is shutting down...
+2025-06-18 17:58:09.609 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 17:58:09.652 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 17:58:09.654 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 17:58:09.654 +02:00 [INF] Hosting environment: Development
+2025-06-18 17:58:09.654 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 17:58:10.285 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 17:58:10.388 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 105.9598ms
+2025-06-18 17:58:10.438 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 17:58:10.527 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 89.3517ms
+2025-06-18 17:58:16.901 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 111
+2025-06-18 17:58:16.911 +02:00 [INF] CORS policy execution successful.
+2025-06-18 17:58:16.912 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 17:58:16.918 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:58:16.945 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 17:58:16.990 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 17:58:16.990 +02:00 [INF] Creating new customer with email: user@example.com
+2025-06-18 17:58:17.174 +02:00 [ERR] Failed executing DbCommand (6ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (Size = 6), @p3='?' (Size = 6), @p4='?' (Size = 8)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("CreatedAt", "Email", "FirstName", "LastName", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-18 17:58:17.188 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'DineEasy.Infrastructure.Data.DineEasyDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.Email'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.Email'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-18 17:58:17.189 +02:00 [ERR] Error creating customer
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.Email'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at DineEasy.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/Repositories/UnitOfWork.cs:line 34
+   at DineEasy.Application.Services.CustomerService.CreateAsync(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/CustomerService.cs:line 33
+   at DineEasy.WebAPI.Controllers.CustomersController.Create(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Controllers/CustomersController.cs:line 18
+2025-06-18 17:58:17.193 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 201.5572ms.
+2025-06-18 17:58:17.197 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-18 17:58:17.199 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 251.8954ms
+2025-06-18 17:58:17.199 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 17:58:17.199 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null text/plain; charset=utf-8 298.2604ms
+2025-06-18 17:58:43.681 +02:00 [INF] Application is shutting down...
+2025-06-18 17:59:58.574 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 17:59:58.640 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 17:59:58.641 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 17:59:58.641 +02:00 [INF] Hosting environment: Development
+2025-06-18 17:59:58.641 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 17:59:58.880 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 17:59:58.985 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 106.6565ms
+2025-06-18 17:59:59.040 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 17:59:59.125 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.4585ms
+2025-06-18 18:00:03.592 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 109
+2025-06-18 18:00:03.601 +02:00 [INF] CORS policy execution successful.
+2025-06-18 18:00:03.602 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 18:00:03.607 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 18:00:03.638 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:00:03.684 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-18 18:00:03.709 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 69.3227ms
+2025-06-18 18:00:03.709 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 18:00:03.710 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null application/problem+json; charset=utf-8 117.9613ms
+2025-06-18 18:00:07.823 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 112
+2025-06-18 18:00:07.832 +02:00 [INF] CORS policy execution successful.
+2025-06-18 18:00:07.832 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 18:00:07.832 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:00:07.847 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:00:07.850 +02:00 [INF] Creating new customer with email: user@example.com
+2025-06-18 18:00:08.073 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (Size = 6), @p3='?' (Size = 6), @p4='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("CreatedAt", "Email", "FirstName", "LastName", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-18 18:00:08.092 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'DineEasy.Infrastructure.Data.DineEasyDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-18 18:00:08.093 +02:00 [ERR] Error creating customer
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.PhoneNumber'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at DineEasy.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/Repositories/UnitOfWork.cs:line 34
+   at DineEasy.Application.Services.CustomerService.CreateAsync(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/CustomerService.cs:line 29
+   at DineEasy.WebAPI.Controllers.CustomersController.Create(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Controllers/CustomersController.cs:line 18
+2025-06-18 18:00:08.099 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 249.262ms.
+2025-06-18 18:00:08.100 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-18 18:00:08.100 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 267.751ms
+2025-06-18 18:00:08.100 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 18:00:08.100 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null text/plain; charset=utf-8 276.8284ms
+2025-06-18 18:00:23.058 +02:00 [INF] Application is shutting down...
+2025-06-18 18:01:06.540 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 18:01:06.592 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 18:01:06.593 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 18:01:06.594 +02:00 [INF] Hosting environment: Development
+2025-06-18 18:01:06.594 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 18:01:07.186 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 18:01:07.295 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 109.5607ms
+2025-06-18 18:01:07.342 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 18:01:07.427 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.147ms
+2025-06-18 18:01:11.976 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/1 - null null
+2025-06-18 18:01:11.986 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 18:01:11.993 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:12.026 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:12.039 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:12.041 +02:00 [INF] Getting customer with ID: 1
+2025-06-18 18:01:12.311 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:12.355 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 313.701ms.
+2025-06-18 18:01:12.359 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.Application.DTOs.Customer.CustomerDto'.
+2025-06-18 18:01:12.377 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 348.8225ms
+2025-06-18 18:01:12.377 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:12.377 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/1 - 200 null application/json; charset=utf-8 401.4743ms
+2025-06-18 18:01:19.263 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/0 - null null
+2025-06-18 18:01:19.270 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:19.271 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:19.276 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:19.276 +02:00 [INF] Getting customer with ID: 0
+2025-06-18 18:01:19.333 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:19.333 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 56.6566ms.
+2025-06-18 18:01:19.334 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-18 18:01:19.354 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 83.2656ms
+2025-06-18 18:01:19.354 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:19.355 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/0 - 404 null application/problem+json; charset=utf-8 91.5973ms
+2025-06-18 18:01:21.641 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/3 - null null
+2025-06-18 18:01:21.642 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:21.642 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:21.646 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:21.646 +02:00 [INF] Getting customer with ID: 3
+2025-06-18 18:01:21.649 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:21.650 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 3.5372ms.
+2025-06-18 18:01:21.650 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-18 18:01:21.651 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 8.058ms
+2025-06-18 18:01:21.651 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:21.651 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/3 - 404 null application/problem+json; charset=utf-8 10.164ms
+2025-06-18 18:01:25.511 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/1 - null null
+2025-06-18 18:01:25.512 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:25.513 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:25.514 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:25.514 +02:00 [INF] Getting customer with ID: 1
+2025-06-18 18:01:25.517 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:25.518 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 3.9099ms.
+2025-06-18 18:01:25.518 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.Application.DTOs.Customer.CustomerDto'.
+2025-06-18 18:01:25.519 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 6.0662ms
+2025-06-18 18:01:25.519 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:25.519 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/1 - 200 null application/json; charset=utf-8 7.6265ms
+2025-06-18 18:01:27.503 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/2 - null null
+2025-06-18 18:01:27.504 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:27.504 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:27.509 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:27.510 +02:00 [INF] Getting customer with ID: 2
+2025-06-18 18:01:27.512 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:27.512 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 2.3938ms.
+2025-06-18 18:01:27.512 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-18 18:01:27.513 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 8.1852ms
+2025-06-18 18:01:27.513 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:27.513 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/2 - 404 null application/problem+json; charset=utf-8 9.3769ms
+2025-06-18 18:01:29.309 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/1 - null null
+2025-06-18 18:01:29.309 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:29.309 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:29.310 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:29.310 +02:00 [INF] Getting customer with ID: 1
+2025-06-18 18:01:29.311 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:29.312 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 2.3747ms.
+2025-06-18 18:01:29.312 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.Application.DTOs.Customer.CustomerDto'.
+2025-06-18 18:01:29.313 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 3.5511ms
+2025-06-18 18:01:29.313 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:29.313 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/1 - 200 null application/json; charset=utf-8 4.3166ms
+2025-06-18 18:01:34.095 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/0 - null null
+2025-06-18 18:01:34.095 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:34.095 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:34.096 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:34.096 +02:00 [INF] Getting customer with ID: 0
+2025-06-18 18:01:34.097 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:34.098 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.NotFoundResult in 1.7135ms.
+2025-06-18 18:01:34.098 +02:00 [INF] Executing ObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ProblemDetails'.
+2025-06-18 18:01:34.098 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 2.9873ms
+2025-06-18 18:01:34.098 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:34.098 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/0 - 404 null application/problem+json; charset=utf-8 3.6058ms
+2025-06-18 18:01:38.930 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Customers/1 - null null
+2025-06-18 18:01:38.931 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:38.931 +02:00 [INF] Route matched with {action = "GetById", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] GetById(Int32) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:01:38.932 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:01:38.936 +02:00 [INF] Getting customer with ID: 1
+2025-06-18 18:01:38.938 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (DbType = Int64)], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Customers" AS "c"
+WHERE "c"."Id" = @__p_0
+LIMIT 1
+2025-06-18 18:01:38.939 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 6.8997ms.
+2025-06-18 18:01:38.939 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.Application.DTOs.Customer.CustomerDto'.
+2025-06-18 18:01:38.939 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI) in 7.9002ms
+2025-06-18 18:01:38.939 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.GetById (DineEasy.WebAPI)'
+2025-06-18 18:01:38.939 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Customers/1 - 200 null application/json; charset=utf-8 9.0375ms
+2025-06-18 18:01:43.007 +02:00 [INF] Application is shutting down...
+2025-06-18 18:10:18.691 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 18:10:18.759 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 18:10:18.761 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 18:10:18.762 +02:00 [INF] Hosting environment: Development
+2025-06-18 18:10:18.762 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 18:10:19.368 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 18:10:19.497 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 130.1228ms
+2025-06-18 18:10:19.551 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 18:10:19.639 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 88.268ms
+2025-06-18 18:10:35.099 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Customers - application/json 112
+2025-06-18 18:10:35.109 +02:00 [INF] CORS policy execution successful.
+2025-06-18 18:10:35.111 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 18:10:35.117 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 18:10:35.150 +02:00 [INF] Route matched with {action = "Create", controller = "Customers"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Customer.CustomerDto]] Create(DineEasy.Application.DTOs.Customer.CreateCustomerDto) on controller DineEasy.WebAPI.Controllers.CustomersController (DineEasy.WebAPI).
+2025-06-18 18:10:35.193 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 18:10:35.194 +02:00 [INF] Creating new customer with email: user@example.com
+2025-06-18 18:10:35.379 +02:00 [ERR] Failed executing DbCommand (7ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 16), @p2='?' (Size = 6), @p3='?' (Size = 6), @p4='?' (Size = 9)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Customers" ("CreatedAt", "Email", "FirstName", "LastName", "PhoneNumber")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id";
+2025-06-18 18:10:35.398 +02:00 [ERR] An exception occurred in the database while saving changes for context type 'DineEasy.Infrastructure.Data.DineEasyDbContext'.
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.Email'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.Email'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+2025-06-18 18:10:35.399 +02:00 [ERR] Error creating customer
+Microsoft.EntityFrameworkCore.DbUpdateException: An error occurred while saving the entity changes. See the inner exception for details.
+ ---> Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 19: 'UNIQUE constraint failed: Customers.Email'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at Microsoft.EntityFrameworkCore.Update.ReaderModificationCommandBatch.ExecuteAsync(IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Update.Internal.BatchExecutor.ExecuteAsync(IEnumerable`1 commandBatches, IRelationalConnection connection, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalDatabase.SaveChangesAsync(IList`1 entries, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(IList`1 entriesToSave, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.ChangeTracking.Internal.StateManager.SaveChangesAsync(StateManager stateManager, Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.DbContext.SaveChangesAsync(Boolean acceptAllChangesOnSuccess, CancellationToken cancellationToken)
+   at DineEasy.Infrastructure.Repositories.UnitOfWork.SaveChangesAsync() in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/Repositories/UnitOfWork.cs:line 34
+   at DineEasy.Application.Services.CustomerService.CreateAsync(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/CustomerService.cs:line 29
+   at DineEasy.WebAPI.Controllers.CustomersController.Create(CreateCustomerDto dto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Controllers/CustomersController.cs:line 18
+2025-06-18 18:10:35.405 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 209.6405ms.
+2025-06-18 18:10:35.408 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-18 18:10:35.410 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI) in 259.0832ms
+2025-06-18 18:10:35.410 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.CustomersController.Create (DineEasy.WebAPI)'
+2025-06-18 18:10:35.411 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Customers - 400 null text/plain; charset=utf-8 311.6906ms
+2025-06-18 18:10:47.021 +02:00 [INF] Application is shutting down...
+2025-06-18 19:27:46.429 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 19:27:46.491 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-18 19:27:46.736 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 19:27:46.738 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 19:27:46.738 +02:00 [INF] Hosting environment: Development
+2025-06-18 19:27:46.738 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 19:27:47.322 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 19:27:47.458 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 137.5266ms
+2025-06-18 19:27:47.518 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 19:27:47.698 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 180.8383ms
+2025-06-18 19:27:57.499 +02:00 [INF] Application is shutting down...
+2025-06-18 19:31:11.848 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 19:31:11.903 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-18 19:31:11.937 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 19:31:11.938 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 19:31:11.938 +02:00 [INF] Hosting environment: Development
+2025-06-18 19:31:11.939 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 19:31:12.498 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 19:31:12.640 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 150.3684ms
+2025-06-18 19:31:12.699 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 19:31:12.793 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 95.2855ms
+2025-06-18 19:31:35.185 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 122
+2025-06-18 19:31:35.194 +02:00 [INF] CORS policy execution successful.
+2025-06-18 19:31:35.195 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 19:31:35.213 +02:00 [ERR] An unhandled exception has occurred while executing the request.
+System.ArgumentNullException: Value cannot be null. (Parameter 's')
+   at System.ArgumentNullException.Throw(String paramName)
+   at System.Text.Encoding.GetBytes(String s)
+   at Program.<>c__DisplayClass0_0.<<Main>$>b__2(JwtBearerOptions options) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Program.cs:line 48
+   at Microsoft.Extensions.Options.ConfigureNamedOptions`1.Configure(String name, TOptions options)
+   at Microsoft.Extensions.Options.OptionsFactory`1.Create(String name)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.<>c.<Get>b__10_0(String name, IOptionsFactory`1 factory)
+   at Microsoft.Extensions.Options.OptionsCache`1.<>c__DisplayClass3_1`1.<GetOrAdd>b__2()
+   at System.Lazy`1.ViaFactory(LazyThreadSafetyMode mode)
+   at System.Lazy`1.ExecutionAndPublication(LazyHelper executionAndPublication, Boolean useDefaultConstructor)
+   at System.Lazy`1.CreateValue()
+   at Microsoft.Extensions.Options.OptionsCache`1.GetOrAdd[TArg](String name, Func`3 createOptions, TArg factoryArgument)
+   at Microsoft.Extensions.Options.OptionsMonitor`1.Get(String name)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.InitializeAsync(AuthenticationScheme scheme, HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandlerProvider.GetHandlerAsync(HttpContext context, String authenticationScheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationService.AuthenticateAsync(HttpContext context, String scheme)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2025-06-18 19:31:35.230 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 500 null text/plain; charset=utf-8 45.4839ms
+2025-06-18 19:33:11.699 +02:00 [INF] Application is shutting down...
+2025-06-18 19:33:14.753 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 19:33:14.787 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-18 19:33:14.812 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 19:33:14.814 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 19:33:14.814 +02:00 [INF] Hosting environment: Development
+2025-06-18 19:33:14.814 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 19:33:15.472 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 19:33:15.613 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 144.3318ms
+2025-06-18 19:33:15.680 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 19:33:15.780 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.7146ms
+2025-06-18 19:33:23.996 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 118
+2025-06-18 19:33:24.009 +02:00 [INF] CORS policy execution successful.
+2025-06-18 19:33:24.014 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 19:33:24.064 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-18 19:33:24.083 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Auth.AuthResponseDto]] Register(DineEasy.Application.DTOs.Auth.RegisterDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-18 19:33:24.121 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 19:33:24.122 +02:00 [INF] Registration attempt for email: user@example.com
+2025-06-18 19:33:24.412 +02:00 [ERR] Failed executing DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."CustomerId", "u"."Email", "u"."IsActive", "u"."PasswordHash", "u"."Role", "u"."Username", "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Users" AS "u"
+LEFT JOIN "Customers" AS "c" ON "u"."CustomerId" = "c"."Id"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-18 19:33:24.429 +02:00 [ERR] An exception occurred while iterating over the results of a query for context type 'DineEasy.Infrastructure.Data.DineEasyDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Users'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Users'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+2025-06-18 19:33:24.431 +02:00 [ERR] Error during registration
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Users'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at Microsoft.EntityFrameworkCore.Query.ShapedQueryCompilingExpressionVisitor.SingleOrDefaultAsync[TSource](IAsyncEnumerable`1 asyncEnumerable, CancellationToken cancellationToken)
+   at DineEasy.Infrastructure.Repositories.UserRepository.GetByEmailAsync(String email) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/Repositories/UserRepository.cs:line 26
+   at DineEasy.Application.Services.AuthService.UserExistsAsync(String email) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/AuthService.cs:line 80
+   at DineEasy.Application.Services.AuthService.RegisterAsync(RegisterDto registerDto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Application/Services/AuthService.cs:line 49
+   at DineEasy.WebAPI.Controllers.AuthController.Register(RegisterDto registerDto) in /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI/Controllers/AuthController.cs:line 43
+2025-06-18 19:33:24.437 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.BadRequestObjectResult in 314.4028ms.
+2025-06-18 19:33:24.442 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'System.String'.
+2025-06-18 19:33:24.444 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) in 359.7751ms
+2025-06-18 19:33:24.444 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-18 19:33:24.445 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 400 null text/plain; charset=utf-8 449.06ms
+2025-06-18 19:33:34.498 +02:00 [INF] Application is shutting down...
+2025-06-18 19:42:35.144 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-06-18 19:42:35.199 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "__EFMigrationsHistory" (
+    "MigrationId" TEXT NOT NULL CONSTRAINT "PK___EFMigrationsHistory" PRIMARY KEY,
+    "ProductVersion" TEXT NOT NULL
+);
+2025-06-18 19:42:35.200 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-06-18 19:42:35.201 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-18 19:42:35.207 +02:00 [INF] Applying migration '20250618174202_AddUserEntity'.
+2025-06-18 19:42:35.228 +02:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Customers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customers" PRIMARY KEY AUTOINCREMENT,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NOT NULL,
+    "Email" TEXT NOT NULL,
+    "PhoneNumber" TEXT NOT NULL,
+    "CreatedAt" TEXT NOT NULL
+);
+2025-06-18 19:43:30.392 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-06-18 19:43:30.412 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "name" = '__EFMigrationsHistory' AND "type" = 'table';
+2025-06-18 19:43:30.417 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2025-06-18 19:43:30.423 +02:00 [INF] Applying migration '20250618174202_AddUserEntity'.
+2025-06-18 19:43:30.450 +02:00 [ERR] Failed executing DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Customers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customers" PRIMARY KEY AUTOINCREMENT,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NOT NULL,
+    "Email" TEXT NOT NULL,
+    "PhoneNumber" TEXT NOT NULL,
+    "CreatedAt" TEXT NOT NULL
+);
+2025-06-18 23:13:49.335 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Customers" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Customers" PRIMARY KEY AUTOINCREMENT,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NOT NULL,
+    "Email" TEXT NOT NULL,
+    "PhoneNumber" TEXT NOT NULL,
+    "CreatedAt" TEXT NOT NULL
+);
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Tables" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Tables" PRIMARY KEY AUTOINCREMENT,
+    "TableNumber" INTEGER NOT NULL,
+    "Capacity" INTEGER NOT NULL,
+    "Location" TEXT NOT NULL,
+    "IsActive" INTEGER NOT NULL DEFAULT 0
+);
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "TimeSlots" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_TimeSlots" PRIMARY KEY AUTOINCREMENT,
+    "StartTime" TEXT NOT NULL,
+    "EndTime" TEXT NOT NULL,
+    "DayOfWeek" INTEGER NOT NULL,
+    "IsAvailable" INTEGER NOT NULL
+);
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Username" TEXT NOT NULL,
+    "Email" TEXT NOT NULL,
+    "PasswordHash" TEXT NOT NULL,
+    "Role" TEXT NOT NULL DEFAULT 'User',
+    "CreatedAt" TEXT NOT NULL DEFAULT (datetime('now')),
+    "IsActive" INTEGER NOT NULL DEFAULT 1,
+    "CustomerId" INTEGER NULL,
+    CONSTRAINT "FK_Users_Customers_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customers" ("Id")
+);
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Reservations" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Reservations" PRIMARY KEY AUTOINCREMENT,
+    "CustomerId" INTEGER NOT NULL,
+    "TableId" INTEGER NOT NULL,
+    "ReservationDateTime" TEXT NOT NULL,
+    "Duration" INTEGER NOT NULL,
+    "PartySize" INTEGER NOT NULL,
+    "Status" TEXT NOT NULL,
+    "SpecialRequests" TEXT NOT NULL,
+    "CreatedAt" TEXT NOT NULL,
+    CONSTRAINT "CK_Reservation_PartySize" CHECK (PartySize > 0 AND PartySize <= 20),
+    CONSTRAINT "FK_Reservations_Customers_CustomerId" FOREIGN KEY ("CustomerId") REFERENCES "Customers" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_Reservations_Tables_TableId" FOREIGN KEY ("TableId") REFERENCES "Tables" ("Id") ON DELETE RESTRICT
+);
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Id", "CreatedAt", "CustomerId", "Email", "IsActive", "PasswordHash", "Role", "Username")
+VALUES (1, '2024-01-01 00:00:00', NULL, 'admin@dineeasy.com', 1, '$2a$11$D0a0TNgLkX5FXQrmy0w2/epU1GTHTk.a/oSGK/qVzME1O3a5Y1KuS', 'Admin', 'admin');
+SELECT changes();
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Customers_Email" ON "Customers" ("Email");
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Customers_PhoneNumber" ON "Customers" ("PhoneNumber");
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Reservations_CustomerId" ON "Reservations" ("CustomerId");
+2025-06-18 23:13:49.578 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Reservations_TableId_DateTime" ON "Reservations" ("TableId", "ReservationDateTime");
+2025-06-18 23:13:49.579 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Users_CustomerId" ON "Users" ("CustomerId");
+2025-06-18 23:13:49.579 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Users_Email" ON "Users" ("Email");
+2025-06-18 23:13:49.579 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Users_Username" ON "Users" ("Username");
+2025-06-18 23:13:49.613 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-18 23:13:49.645 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 23:13:49.646 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 23:13:49.647 +02:00 [INF] Hosting environment: Development
+2025-06-18 23:13:49.647 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 23:13:49.922 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 23:13:50.077 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 158.5762ms
+2025-06-18 23:13:50.136 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 23:13:50.255 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 118.5764ms
+2025-06-18 23:13:57.228 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 112
+2025-06-18 23:13:57.237 +02:00 [INF] CORS policy execution successful.
+2025-06-18 23:13:57.239 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 23:13:57.284 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-18 23:13:57.303 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Auth.AuthResponseDto]] Register(DineEasy.Application.DTOs.Auth.RegisterDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-18 23:13:57.337 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 23:13:57.337 +02:00 [INF] Registration attempt for email: user@example.com
+2025-06-18 23:13:57.560 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 16)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."CustomerId", "u"."Email", "u"."IsActive", "u"."PasswordHash", "u"."Role", "u"."Username", "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Users" AS "u"
+LEFT JOIN "Customers" AS "c" ON "u"."CustomerId" = "c"."Id"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-18 23:13:57.799 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = Int32), @p2='?' (Size = 16), @p3='?' (Size = 60), @p4='?' (Size = 6)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("CreatedAt", "CustomerId", "Email", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3, @p4)
+RETURNING "Id", "IsActive", "Role";
+2025-06-18 23:13:57.835 +02:00 [INF] Successful registration for user: string
+2025-06-18 23:13:57.837 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.CreatedAtActionResult in 498.3381ms.
+2025-06-18 23:13:57.841 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'DineEasy.Application.DTOs.Auth.AuthResponseDto'.
+2025-06-18 23:13:57.859 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) in 553.9325ms
+2025-06-18 23:13:57.859 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-18 23:13:57.860 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 201 null application/json; charset=utf-8 632.0805ms
+2025-06-18 23:20:23.754 +02:00 [INF] Application is shutting down...
+2025-06-18 23:20:26.624 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-18 23:20:26.655 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-18 23:20:26.683 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-18 23:20:26.685 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-18 23:20:26.685 +02:00 [INF] Hosting environment: Development
+2025-06-18 23:20:26.685 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-18 23:20:26.980 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-18 23:20:27.092 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 113.8925ms
+2025-06-18 23:20:27.148 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-18 23:20:27.281 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 132.4561ms
+2025-06-18 23:21:02.229 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 61
+2025-06-18 23:21:02.247 +02:00 [INF] CORS policy execution successful.
+2025-06-18 23:21:02.248 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-18 23:21:02.292 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-18 23:21:02.310 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.Auth.AuthResponseDto]] Login(DineEasy.Application.DTOs.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-18 23:21:02.343 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-18 23:21:02.346 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-18 23:21:02.567 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."CustomerId", "u"."Email", "u"."IsActive", "u"."PasswordHash", "u"."Role", "u"."Username", "c"."Id", "c"."CreatedAt", "c"."Email", "c"."FirstName", "c"."LastName", "c"."PhoneNumber"
+FROM "Users" AS "u"
+LEFT JOIN "Customers" AS "c" ON "u"."CustomerId" = "c"."Id"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-18 23:21:02.768 +02:00 [INF] Successful login for user: admin
+2025-06-18 23:21:02.770 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 424.874ms.
+2025-06-18 23:21:02.774 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.Application.DTOs.Auth.AuthResponseDto'.
+2025-06-18 23:21:02.785 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 473.607ms
+2025-06-18 23:21:02.785 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-18 23:21:02.786 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 557.8428ms
+2025-06-18 23:21:12.744 +02:00 [INF] Application is shutting down...

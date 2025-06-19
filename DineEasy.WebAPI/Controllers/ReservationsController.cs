@@ -38,7 +38,7 @@ public class ReservationsController : ControllerBase
     {
         try
         {
-            _logger.LogInformation("Creating new reservation for customer: {CustomerId}", dto.CustomerId);
+            _logger.LogInformation("Creating new reservation for client: {ClientId}", dto.ClientId);
             var reservation = await _reservationService.CreateAsync(dto);
             return CreatedAtAction(nameof(GetById), new { id = reservation!.Id }, reservation);
         }

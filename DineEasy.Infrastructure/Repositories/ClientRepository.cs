@@ -5,47 +5,47 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DineEasy.Infrastructure.Repositories;
 
-public class CustomerRepository : ICustomerRepository
+public class ClientRepository : IClientRepository
 {
 
     private readonly DineEasyDbContext _dbContext;
 
-    public CustomerRepository(DineEasyDbContext dbContext)
+    public ClientRepository(DineEasyDbContext dbContext)
     {
         _dbContext = dbContext;
     }
     
-    public async Task<Customer?> GetByIdAsync(long id)
+    public async Task<Client?> GetByIdAsync(int id)
     {
         return await _dbContext.Customers.FindAsync(id);
     }
 
-    public async Task<IEnumerable<Customer>> GetAllAsync()
+    public async Task<IEnumerable<Client>> GetAllAsync()
     {
         return await _dbContext.Customers.ToListAsync();
     }
 
-    public async Task AddAsync(Customer customer)
+    public async Task AddAsync(Client client)
     {
-        await _dbContext.Customers.AddAsync(customer);
+        await _dbContext.Customers.AddAsync(client);
     }
 
-    public void Update(Customer customer)
+    public void Update(Client client)
     { 
-        _dbContext.Customers.Update(customer);
+        _dbContext.Customers.Update(client);
     }
 
-    public void Delete(Customer customer)
+    public void Delete(Client client)
     {
-        _dbContext.Customers.Remove(customer);
+        _dbContext.Customers.Remove(client);
     }
 
-    public async Task<Customer?> GetByEmailAsync(string email)
+    public async Task<Client?> GetByEmailAsync(string email)
     {
         return await _dbContext.Customers.FirstOrDefaultAsync(x => x.Email == email);
     }
 
-    public async Task<Customer?> GetByPhoneNumberAsync(string phoneNumber)
+    public async Task<Client?> GetByPhoneNumberAsync(string phoneNumber)
     {
         return await _dbContext.Customers.FirstOrDefaultAsync(x => x.PhoneNumber == phoneNumber);
     }
