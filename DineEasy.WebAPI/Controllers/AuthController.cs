@@ -45,16 +45,16 @@ public class AuthController(IAuthService authService, ILogger<AuthController> lo
             if (result == null)
             {
                 logger.LogWarning("Failed registration - user already exists: {Email}", registerDto.Email);
-                return BadRequest("User with this email already exists");
+                return Conflict("User with this email already exists");
             }
 
             logger.LogInformation("Successful registration for user: {Username}", result.Username);
-            return CreatedAtAction(nameof(Login), result);
+            return Created(nameof(Login), result);
         }
         catch (Exception ex)
         {
             logger.LogError(ex, "Error during registration");
-            return BadRequest("An error occurred during registration");
+            return StatusCode(500, "An error occurred during registration");
         }
     }
 }
