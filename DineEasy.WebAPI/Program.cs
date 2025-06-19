@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using DineEasy.Application.Interfaces;
 using DineEasy.Application.Services;
 using DineEasy.Domain.Interfaces;
@@ -47,6 +48,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
+            RoleClaimType = ClaimTypes.Role,
             ValidateIssuer = true,
             ValidateAudience = true,
             ValidateLifetime = true,
