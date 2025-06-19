@@ -1,79 +1,73 @@
 using DineEasy.Domain.Entities;
+using DineEasy.Domain.Enums;
 using DineEasy.Domain.Interfaces;
 using DineEasy.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 
 namespace DineEasy.Infrastructure.Repositories;
 
-public class ReservationRepository : IReservationRepository
+public class ReservationRepository(DineEasyDbContext dbContext) : IReservationRepository
 {
-    private readonly DineEasyDbContext _dbContext;
-
-    public ReservationRepository(DineEasyDbContext dbContext)
+    public async Task<Reservation?> GetByIdAsync(int id)
     {
-        _dbContext = dbContext;
-    }
-    
-    public async Task<Reservation?> GetByIdAsync(long id)
-    {
-        return await _dbContext.Reservations.FindAsync(id); 
+        return await dbContext.Reservations
+            .Include(r => r.User)
+            .Include(r => r.Table)
+            .FirstOrDefaultAsync(u => u.Id == id);
     }
 
     public async Task<IEnumerable<Reservation>> GetAllAsync()
     {
-        return await _dbContext.Reservations.ToListAsync();
+        return await dbContext.Reservations.ToListAsync();
     }
 
     public async Task AddAsync(Reservation reservation)
     {
-        await _dbContext.Reservations.AddAsync(reservation);
+        await dbContext.Reservations.AddAsync(reservation);
     }
 
     public void Update(Reservation reservation)
     {
-        _dbContext.Reservations.Update(reservation);
+        dbContext.Reservations.Update(reservation);
     }
 
     public void Delete(Reservation reservation)
     {
-        _dbContext.Reservations.Remove(reservation);
+        dbContext.Reservations.Remove(reservation);
     }
 
-    public async Task<IEnumerable<Reservation>> GetByCustomerIdAsync(long customerId)
+    public async Task<IEnumerable<Reservation>> GetByUserIdAsync(int clientId)
     {
-        return await _dbContext.Reservations
-            .Where(r => r.CustomerId == customerId)
+        return await dbContext.Reservations
+            .Where(r => r.UserId == clientId)
             .ToListAsync();
     }
-
-    public async Task<IEnumerable<Reservation>> GetByTableIdAsync(long tableId)
-    {
-        return await _dbContext.Reservations
-            .Where(r => r.TableId == tableId)
-            .ToListAsync();
-    }
-
-    public async Task<IEnumerable<Reservation>> GetByDateAsync(DateTime reservationDateTime)
-    {
-        return await _dbContext.Reservations
-            .Where(r => r.ReservationDateTime.Date == reservationDateTime.Date)
-            .ToListAsync();
-    }
-
-    public async Task<bool> IsTableAvailableAsync(long tableId, DateTime requestedDateTime, int durationHours = 2)
-    {
-        var table = await _dbContext.Tables.FindAsync(tableId);
-        if (table == null || !table.IsActive)
-            return false;
     
-        var requestedEndTime = requestedDateTime.AddHours(durationHours);
+    public async Task<bool> HasActiveReservationsAsync(int userId)
+    {
+        return await dbContext.Reservations
+            .AnyAsync(r => r.UserId == userId && 
+                           (r.Status == ReservationStatus.Confirmed || 
+                            r.Status == ReservationStatus.Pending));
+    }
+
+    public async Task<bool> HasOverlappingReservationAsync(DateTime dateTime, int duration, int tabelId)
+    {
+        var newReservationEnd = dateTime.AddHours(duration);
         
-        var hasConflict = await _dbContext.Reservations
-            .Where(r => r.TableId == tableId &&
-                        r.ReservationDateTime < requestedEndTime &&
-                        r.ReservationDateTime.AddHours(r.Duration) > requestedDateTime)
-            .AnyAsync();
-    
-        return !hasConflict; 
+        return await dbContext.Reservations
+            .Where(r => r.TableId == tabelId)
+            .Where(r => r.Status != ReservationStatus.Cancelled 
+                        && r.Status != ReservationStatus.Completed)
+            .AnyAsync(r => 
+                dateTime < r.ReservationDateTime.AddHours(r.Duration) &&
+                newReservationEnd > r.ReservationDateTime);
+    }
+
+    public async Task<IEnumerable<Reservation>> GetAllByUserIdAsync(int userId)
+    {
+        return await dbContext.Reservations
+            .Where(r => r.UserId == userId)
+            .ToListAsync();
     }
 }

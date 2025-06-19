@@ -1,6 +1,9 @@
+using DineEasy.Application.DTOs.Auth;
+
 namespace DineEasy.Application.Interfaces;
 
-public class IAuthService
+public interface IAuthService
 {
-    
+    Task<AuthResponseDto?> LoginAsync(LoginDto loginDto);
+    Task<AuthResponseDto?> RegisterAsync(RegisterDto registerDto);
 }

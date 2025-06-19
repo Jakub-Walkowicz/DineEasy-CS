@@ -1,7 +1,7 @@
-namespace Kiosk.WebAPI.Db.Exceptions
+namespace DineEasy.Application.Exceptions
 {
-    public class BadRequestException : Exception
+    public class ReservationHoursOutOfBoundException : Exception
     {
-        public BadRequestException(string message) : base(message) { }
+        public ReservationHoursOutOfBoundException(string message) : base(message) { }
     }
 }

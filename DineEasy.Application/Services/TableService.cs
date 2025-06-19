@@ -2,22 +2,24 @@ using DineEasy.Application.DTOs.Table;
 using DineEasy.Application.Interfaces;
 using DineEasy.Domain.Interfaces;
 using DineEasy.Application.Extensions;
+using Kiosk.WebAPI.Db.Exceptions;
 
 namespace DineEasy.Application.Services;
 
-public class TableService : ITableService
+public class TableService(IUnitOfWork unitOfWork) : ITableService
 {
-    
-    private readonly IUnitOfWork _unitOfWork;
-
-    public TableService(IUnitOfWork unitOfWork)
+    public async Task<TableDto?> GetByIdAsync(int id)
     {
-        _unitOfWork = unitOfWork;
+        if (id <= 0) throw new BadRequestException("Given Id must be greater than zero!");
+    
+        var table = await unitOfWork.Tables.GetByIdAsync(id);
+    
+        return table?.ToDto();
     }
-    
-    public async Task<List<TableDto>> GetAllAsync()
+
+    public async Task<IEnumerable<TableDto>> GetAllAsync()
     {
-        var tables = await _unitOfWork.Tables.GetAllAsync();
+        var tables = await unitOfWork.Tables.GetAllAsync();
         return tables.ToDtos();
     }
 
@@ -25,19 +27,37 @@ public class TableService : ITableService
     {
         var table = dto.ToEntity();
         
-        await _unitOfWork.Tables.AddAsync(table);
-        await _unitOfWork.SaveChangesAsync();
+        await unitOfWork.Tables.AddAsync(table);
+        await unitOfWork.SaveChangesAsync();
         return table.ToDto();
     }
 
     public async Task<bool> DeleteAsync(int id)
     {
-        var table = await _unitOfWork.Tables.GetByIdAsync(id);
+        if (id <= 0) throw new BadRequestException("Given Id must be greater than zero!");
         
+        var table = await unitOfWork.Tables.GetByIdAsync(id);
+
         if (table == null) return false;
         
-        _unitOfWork.Tables.Delete(table);
-        await _unitOfWork.SaveChangesAsync();
+        unitOfWork.Tables.Delete(table);
+        await unitOfWork.SaveChangesAsync();
+        return true;
+    }
+    
+    public async Task<bool> UpdateAsync(UpdateTableDto dto)
+    {
+        if (dto.Id <= 0) throw new BadRequestException("Given Id must be greater than zero!");
+    
+        var existingTable = await unitOfWork.Tables.GetByIdAsync(dto.Id);
+        if (existingTable == null) return false;
+        
+        existingTable.Capacity = dto.Capacity;
+        existingTable.IsActive = dto.IsActive;
+        existingTable.TableNumber = dto.TableNumber;
+    
+        unitOfWork.Tables.Update(existingTable);
+        await unitOfWork.SaveChangesAsync();
         return true;
     }
 }

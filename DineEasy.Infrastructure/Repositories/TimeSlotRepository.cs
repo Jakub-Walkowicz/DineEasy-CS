@@ -5,48 +5,36 @@ using Microsoft.EntityFrameworkCore;
 
 namespace DineEasy.Infrastructure.Repositories;
 
-public class TimeSlotRepository : ITimeSlotRepository
+public class TimeSlotRepository(DineEasyDbContext dbContext) : ITimeSlotRepository
 {
-    
-    private readonly DineEasyDbContext _dbContext;
-
-    public TimeSlotRepository(DineEasyDbContext dbContext)
+    public async Task<TimeSlot?> GetByIdAsync(int id)
     {
-        _dbContext = dbContext;
-    }
-    
-    public async Task<TimeSlot?> GetByIdAsync(long id)
-    {
-        return await _dbContext.TimeSlots.FindAsync(id);
+        return await dbContext.TimeSlots.FindAsync(id);
     }
 
     public async Task<IEnumerable<TimeSlot>> GetAllAsync()
     {
-        return await _dbContext.TimeSlots.ToListAsync();
+        return await dbContext.TimeSlots.ToListAsync();
     }
 
     public async Task AddAsync(TimeSlot timeSlot)
     {
-       await _dbContext.TimeSlots.AddAsync(timeSlot);
+       await dbContext.TimeSlots.AddAsync(timeSlot);
     }
 
     public void Update(TimeSlot timeSlot)
     {
-        _dbContext.TimeSlots.Update(timeSlot);
+        dbContext.TimeSlots.Update(timeSlot);
     }
 
     public void Delete(TimeSlot timeSlot)
     {
-        _dbContext.TimeSlots.Remove(timeSlot);
+        dbContext.TimeSlots.Remove(timeSlot);
     }
 
-    public async Task<IEnumerable<TimeSlot>> GetAvailableAsync()
+    public async Task<TimeSlot?> GetByDayOfWeekAsync(DayOfWeek dayOfWeek)
     {
-        return await _dbContext.TimeSlots.Where(x => x.IsAvailable).ToListAsync();
-    }
-
-    public async Task<IEnumerable<TimeSlot>> GetAvailableByDayOfWeekAsync(DayOfWeek dayOfWeek)
-    {
-        return await _dbContext.TimeSlots.Where(x => x.DayOfWeek == dayOfWeek && x.IsAvailable).ToListAsync(); 
+        return await dbContext.TimeSlots
+            .FirstOrDefaultAsync(x => x!.DayOfWeek == dayOfWeek); 
     }
 }

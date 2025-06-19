@@ -3,39 +3,35 @@ using DineEasy.Infrastructure.Data;
 
 namespace DineEasy.Infrastructure.Repositories;
 
-public class UnitOfWork : IUnitOfWork
+public class UnitOfWork(DineEasyDbContext dbContext) : IUnitOfWork
 {
-    private readonly DineEasyDbContext _dbContext;
-    
-    private ICustomerRepository? _customers;
     private IReservationRepository? _reservations;
     private ITableRepository? _tables;
     private ITimeSlotRepository? _timeSlots;
+    private IUserRepository? _users;
+    private IUserProfileRepository? _userProfiles;
 
-    public UnitOfWork(DineEasyDbContext dbContext)
-    {
-        _dbContext = dbContext;
-    }
-    
-    public ICustomerRepository Customers =>
-        _customers ??= new CustomerRepository(_dbContext);
+    public IUserProfileRepository UserProfiles => 
+        _userProfiles ??= new UserProfileRepository(dbContext);
+    public IUserRepository Users => 
+        _users ??= new UserRepository(dbContext);
         
     public IReservationRepository Reservations =>
-        _reservations ??= new ReservationRepository(_dbContext);
+        _reservations ??= new ReservationRepository(dbContext);
         
     public ITableRepository Tables =>
-        _tables ??= new TableRepository(_dbContext);
+        _tables ??= new TableRepository(dbContext);
         
     public ITimeSlotRepository TimeSlots =>
-        _timeSlots ??= new TimeSlotRepository(_dbContext);
+        _timeSlots ??= new TimeSlotRepository(dbContext);
     
     public async Task<int> SaveChangesAsync()
     {
-        return await _dbContext.SaveChangesAsync();
+        return await dbContext.SaveChangesAsync();
     }
 
     public void Dispose()
     {
-        _dbContext?.Dispose();
+        dbContext?.Dispose();
     }
 }

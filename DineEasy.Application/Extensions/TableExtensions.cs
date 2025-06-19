@@ -12,7 +12,6 @@ public static class TableExtensions
             Id = table.Id,
             Capacity = table.Capacity,
             IsActive = table.IsActive,
-            Location = table.Location,
             TableNumber = table.TableNumber
         };
     }
@@ -23,12 +22,11 @@ public static class TableExtensions
         {
             Capacity = dto.Capacity,
             IsActive = dto.IsActive,
-            Location = dto.Location,
             TableNumber = dto.TableNumber
         };
     }
     
-    public static List<TableDto> ToDtos(this IEnumerable<Table> tables)
+    public static IEnumerable<TableDto> ToDtos(this IEnumerable<Table> tables)
     {
         return tables.Select(table => table.ToDto()).ToList();
     }

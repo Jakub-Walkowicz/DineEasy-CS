@@ -1,9 +1,13 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace DineEasy.Application.DTOs.TimeSlot;
 
 public class CreateTimeSlotDto
 {
-        public TimeOnly StartTime { get; set; }     
-        public TimeOnly EndTime { get; set; }        
+        [Required]
+        public TimeOnly StartTime { get; set; }
+        [Required]
+        public TimeOnly EndTime { get; set; }
+        [Required]
         public DayOfWeek DayOfWeek { get; set; }    
-        public bool IsAvailable { get; set; } = true;
 }
