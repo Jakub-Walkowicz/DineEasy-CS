@@ -1,6 +1,6 @@
 namespace DineEasy.Application.Extensions;
 
-public class UserProfileExtensions
+public class UserNotExists
 {
     
 }

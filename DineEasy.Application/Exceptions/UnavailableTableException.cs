@@ -1,6 +1,6 @@
 namespace DineEasy.Application.Exceptions;
 
-public class NotFoundExceptio
+public class UnavailableTableException
 {
     
 }
