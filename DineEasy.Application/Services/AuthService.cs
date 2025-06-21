@@ -36,7 +36,8 @@ public class AuthService(IUnitOfWork unitOfWork, IConfiguration configuration, I
             Username = user.Username,
             Token = token,
             Role = user.Role.ToString(),
-            Email = user.Email
+            Email = user.Email,
+            UserId = user.Id
         };
     }
 
@@ -90,7 +91,8 @@ public class AuthService(IUnitOfWork unitOfWork, IConfiguration configuration, I
             Username = user.Username,
             Token = token,
             Role = user.Role.ToString(),
-            Email = user.Email
+            Email = user.Email,
+            UserId = user.Id
         };
     }
 

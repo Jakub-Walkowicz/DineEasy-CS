@@ -53,7 +53,9 @@ builder.Services.AddSwaggerGen(c =>
 
 
 builder.Services.AddDbContext<DineEasyDbContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection"))
+        .EnableSensitiveDataLogging() // Pokaże wartości parametrów
+        .LogTo(Console.WriteLine, LogLevel.Information)); // Pokaże SQL queries
 
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();

@@ -19,7 +19,10 @@ public class ReservationRepository(DineEasyDbContext dbContext) : IReservationRe
 
     public async Task<IEnumerable<Reservation>> GetAllAsync()
     {
-        return await dbContext.Reservations.ToListAsync();
+        return await dbContext.Reservations
+            .Include(r => r.Table)     
+            .Include(r => r.User)
+            .ToListAsync();
     }
 
     public async Task AddAsync(Reservation reservation)
@@ -68,6 +71,8 @@ public class ReservationRepository(DineEasyDbContext dbContext) : IReservationRe
     public async Task<IEnumerable<Reservation>> GetAllByUserIdAsync(int userId)
     {
         return await dbContext.Reservations
+            .Include(r => r.Table)    
+            .Include(r => r.User)     
             .Where(r => r.UserId == userId)
             .ToListAsync();
     }

@@ -1,0 +1,128 @@
+@page "/register"
+@using DineEasy.SharedKernel.Models.Auth
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+@using DineEasy.Application.Interfaces
+@inject IAuthApiClient AuthApiClient
+
+<PageTitle>Rejestracja</PageTitle>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Rejestracja</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@registerDto" OnValidSubmit="@HandleRegistration">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label for="username" class="form-label">Nazwa użytkownika</label>
+                            <InputText id="username" class="form-control" @bind-Value="registerDto.Username" />
+                            <ValidationMessage For="@(() => registerDto.Username)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <InputText id="email" type="email" class="form-control" @bind-Value="registerDto.Email" />
+                            <ValidationMessage For="@(() => registerDto.Email)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Hasło</label>
+                            <InputText id="password" type="password" class="form-control" @bind-Value="registerDto.Password" />
+                            <ValidationMessage For="@(() => registerDto.Password)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="firstName" class="form-label">Imię</label>
+                            <InputText id="firstName" class="form-control" @bind-Value="registerDto.FirstName" />
+                            <ValidationMessage For="@(() => registerDto.FirstName)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="lastName" class="form-label">Nazwisko</label>
+                            <InputText id="lastName" class="form-control" @bind-Value="registerDto.LastName" />
+                            <ValidationMessage For="@(() => registerDto.LastName)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phoneNumber" class="form-label">Numer telefonu (opcjonalnie)</label>
+                            <InputText id="phoneNumber" class="form-control" @bind-Value="registerDto.PhoneNumber" />
+                            <ValidationMessage For="@(() => registerDto.PhoneNumber)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="dateOfBirth" class="form-label">Data urodzenia (opcjonalnie)</label>
+                            <InputDate id="dateOfBirth" class="form-control" @bind-Value="registerDto.DateOfBirth" />
+                            <ValidationMessage For="@(() => registerDto.DateOfBirth)" class="text-danger" />
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary" disabled="@isSubmitting">
+                                @if (isSubmitting)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                }
+                                Zarejestruj się
+                            </button>
+                        </div>
+                    </EditForm>
+
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div class="alert alert-danger mt-3">
+                            @errorMessage
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(successMessage))
+                    {
+                        <div class="alert alert-success mt-3">
+                            @successMessage
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private RegisterDto registerDto = new();
+    private bool isSubmitting = false;
+    private string errorMessage = string.Empty;
+    private string successMessage = string.Empty;
+    
+    private async Task HandleRegistration()
+    {
+        isSubmitting = true;
+        errorMessage = string.Empty;
+        successMessage = string.Empty;
+
+        try
+        {
+            var result = await AuthApiClient.RegisterAsync(registerDto);
+
+            if (result != null)
+            {
+                successMessage = "Rejestracja przebiegła pomyślnie!";
+                registerDto = new(); // Wyczyść formularz
+            }
+            else
+            {
+                errorMessage = "Błąd podczas rejestracji";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Wystąpił błąd podczas rejestracji: " + ex.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+}

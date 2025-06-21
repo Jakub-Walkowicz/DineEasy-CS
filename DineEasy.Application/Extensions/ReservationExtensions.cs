@@ -22,6 +22,7 @@ public static class ReservationExtensions
     {
         return new Reservation
         {
+            UserId = dto.UserId,
             PartySize = dto.PartySize,
             ReservationDateTime = dto.ReservationDateTime,
             Duration = dto.Duration,

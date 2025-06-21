@@ -1,37 +1,119 @@
-@page "/menu"
+﻿@page "/menu"
+@using Radzen
+@using Radzen.Blazor
 
-<PageTitle>Menu - DineEasy</PageTitle>
+<PageTitle>Menu</PageTitle>
 
-<div class="container mt-4">
-    <h2 class="text-center mb-4">Menu Restauracji</h2>
+<div class="container-fluid" style="background-color: #fff3cd; min-height: 100vh; padding: 20px;">
     
-    <div class="row">
-        <div class="col-md-6">
-            <RadzenCard class="mb-3">
-                <h4>Przystawki</h4>
-                <p>Bruschetta - 15 zł</p>
-                <p>Krewetki w czosnku - 25 zł</p>
-                <p>Carpaccio - 30 zł</p>
-            </RadzenCard>
-        </div>
-        
-        <div class="col-md-6">
-            <RadzenCard class="mb-3">
-                <h4>Dania główne</h4>
-                <p>Stek wołowy - 45 zł</p>
-                <p>Łosoś grillowany - 40 zł</p>
-                <p>Risotto - 35 zł</p>
-            </RadzenCard>
-        </div>
+    <!-- Nagłówek z obrazkiem -->
+    <div class="text-center mb-4">
+        <h1 style="color: #d63384; font-family: Comic Sans MS, cursive; font-size: 3rem;">
+            🍕 Menu Restauracji XYZ 🍔
+        </h1>
+        <img src="https://via.placeholder.com/300x200/ffb3ba/000000?text=Yummy+Food" 
+             alt="Pyszne jedzenie" 
+             class="img-fluid rounded" 
+             style="max-width: 300px; border: 5px solid #fd7e14;"/>
     </div>
-    
-    <div class="text-center mt-4">
-        <RadzenButton Text="Powrót" 
-                      ButtonStyle="ButtonStyle.Secondary"
-                      Click="@(() => Navigation.NavigateTo("/"))" />
-    </div>
+
+    <!-- Menu w Radzen Card -->
+    <RadzenRow>
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenCard style="background-color: #d4edda; border: 3px solid #28a745; margin-bottom: 20px;">
+                <h3 style="color: #155724; text-align: center;">🍕 Pizza</h3>
+                <RadzenDataList Data="@pizze" TItem="MenuItem">
+                    <Template Context="item">
+                        <div style="padding: 10px; margin: 5px 0; background-color: white; border-radius: 10px; border: 2px dashed #28a745;">
+                            <RadzenRow>
+                                <RadzenColumn Size="8">
+                                    <h4 style="color: #d63384; margin: 0;">@item.Nazwa</h4>
+                                    <p style="color: #6c757d; margin: 5px 0;">@item.Opis</p>
+                                </RadzenColumn>
+                                <RadzenColumn Size="4" class="text-end">
+                                    <RadzenBadge BadgeStyle="BadgeStyle.Success" 
+                                               Text="@($"{item.Cena:C}")" 
+                                               style="font-size: 1.2rem;"/>
+                                </RadzenColumn>
+                            </RadzenRow>
+                        </div>
+                    </Template>
+                </RadzenDataList>
+            </RadzenCard>
+        </RadzenColumn>
+
+        <RadzenColumn Size="12" SizeMD="6">
+            <RadzenCard style="background-color: #cce5ff; border: 3px solid #007bff; margin-bottom: 20px;">
+                <h3 style="color: #004085; text-align: center;">🍔 Burgery</h3>
+                <RadzenDataList Data="@burgery" TItem="MenuItem">
+                    <Template Context="item">
+                        <div style="padding: 10px; margin: 5px 0; background-color: white; border-radius: 10px; border: 2px dashed #007bff;">
+                            <RadzenRow>
+                                <RadzenColumn Size="8">
+                                    <h4 style="color: #d63384; margin: 0;">@item.Nazwa</h4>
+                                    <p style="color: #6c757d; margin: 5px 0;">@item.Opis</p>
+                                </RadzenColumn>
+                                <RadzenColumn Size="4" class="text-end">
+                                    <RadzenBadge BadgeStyle="BadgeStyle.Primary" 
+                                               Text="@($"{item.Cena:C}")" 
+                                               style="font-size: 1.2rem;"/>
+                                </RadzenColumn>
+                            </RadzenRow>
+                        </div>
+                    </Template>
+                </RadzenDataList>
+            </RadzenCard>
+        </RadzenColumn>
+    </RadzenRow>
+
+    <!-- Napoje -->
+    <RadzenCard style="background-color: #fff2cc; border: 3px solid #ffc107; margin-bottom: 20px;">
+        <h3 style="color: #856404; text-align: center;">🥤 Napoje</h3>
+        <RadzenRow>
+            @foreach (var napoj in napoje)
+            {
+                <RadzenColumn Size="6" SizeMD="3">
+                    <div style="padding: 15px; margin: 5px; background-color: white; border-radius: 15px; border: 2px solid #ffc107; text-align: center;">
+                        <h5 style="color: #d63384;">@napoj.Nazwa</h5>
+                        <RadzenBadge BadgeStyle="BadgeStyle.Warning" 
+                                   Text="@($"{napoj.Cena:C}")" 
+                                   style="font-size: 1.1rem;"/>
+                    </div>
+                </RadzenColumn>
+            }
+        </RadzenRow>
+    </RadzenCard>
+
 </div>
 
 @code {
-    [Inject] NavigationManager Navigation { get; set; } = default!;
+    public class MenuItem
+    {
+        public string Nazwa { get; set; } = "";
+        public string Opis { get; set; } = "";
+        public decimal Cena { get; set; }
+    }
+
+    private List<MenuItem> pizze = new()
+    {
+        new MenuItem { Nazwa = "Pizza Margherita", Opis = "Ser, pomidory, bazylia", Cena = 25.99m },
+        new MenuItem { Nazwa = "Pizza Pepperoni", Opis = "Ser, salami pepperoni", Cena = 28.99m },
+        new MenuItem { Nazwa = "Pizza Hawajska", Opis = "Ser, szynka, ananas", Cena = 29.99m }
+    };
+
+    private List<MenuItem> burgery = new()
+    {
+        new MenuItem { Nazwa = "Burger Classic", Opis = "Wołowina, ser, sałata, pomidor", Cena = 22.99m },
+        new MenuItem { Nazwa = "Burger Chicken", Opis = "Kurczak, ser, sałata", Cena = 20.99m },
+        new MenuItem { Nazwa = "Burger Vege", Opis = "Kotlet roślinny, warzywa", Cena = 19.99m }
+    };
+
+    private List<MenuItem> napoje = new()
+    {
+        new MenuItem { Nazwa = "Coca Cola", Cena = 5.99m },
+        new MenuItem { Nazwa = "Sprite", Cena = 5.99m },
+        new MenuItem { Nazwa = "Sok jabłkowy", Cena = 4.99m },
+        new MenuItem { Nazwa = "Woda", Cena = 3.99m }
+    };
+    
 }

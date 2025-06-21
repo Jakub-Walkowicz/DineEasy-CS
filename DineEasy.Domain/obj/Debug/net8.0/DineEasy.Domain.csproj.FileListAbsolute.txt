@@ -11,3 +11,6 @@
 /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/obj/Debug/net8.0/DineEasy.Domain.pdb
 /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/obj/Debug/net8.0/ref/DineEasy.Domain.dll
 /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/obj/Debug/net8.0/DineEasy.Domain.csproj.AssemblyReference.cache
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/bin/Debug/net8.0/DineEasy.SharedKernel.dll
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/bin/Debug/net8.0/DineEasy.SharedKernel.pdb
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Domain/obj/Debug/net8.0/DineEasy.0DA8CED1.Up2Date

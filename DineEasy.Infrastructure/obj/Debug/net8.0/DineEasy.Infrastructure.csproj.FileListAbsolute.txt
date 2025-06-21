@@ -16,3 +16,5 @@
 /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/obj/Debug/net8.0/DineEasy.Infrastructure.pdb
 /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/obj/Debug/net8.0/DineEasy.Infrastructure.genruntimeconfig.cache
 /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/obj/Debug/net8.0/ref/DineEasy.Infrastructure.dll
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/bin/Debug/net8.0/DineEasy.SharedKernel.dll
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.Infrastructure/bin/Debug/net8.0/DineEasy.SharedKernel.pdb

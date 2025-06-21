@@ -28,13 +28,11 @@ public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAll()
     {
         _logger.LogInformation("Getting reservations for user: {User}", User.Identity.Name);
         
-        // DEBUG: Wypisz wszystkie claimy
         foreach (var claim in User.Claims)
         {
             _logger.LogInformation("Claim: {Type} = {Value}", claim.Type, claim.Value);
         }
         
-        // Sprawdź rolę użytkownika
         if (User.IsInRole("Admin"))
         {
             _logger.LogInformation("User is Admin - returning all reservations");
@@ -119,28 +117,22 @@ public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAll()
                 return BadRequest(ModelState);
             }
 
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            if (userIdClaim == null || !int.TryParse(userIdClaim.Value, out int userId))
+            {
+                _logger.LogWarning("Could not find or parse user ID from token");
+                return BadRequest("Invalid user token");
+            }
+            
+            dto.UserId = userId;
+
             _logger.LogInformation("Creating new reservation for UserId: {UserId}, TableId: {TableId}", 
                 dto.UserId, dto.TableId);
-            
+        
             var reservation = await _reservationService.CreateAsync(dto);
-            
+        
             _logger.LogInformation("Successfully created reservation with ID: {ReservationId}", reservation!.Id);
             return CreatedAtAction(nameof(GetById), new { id = reservation.Id }, reservation);
-        }
-        catch (ReservationHoursOutOfBoundException ex)
-        {
-            _logger.LogWarning("Reservation creation failed - hours out of bound: {Message}", ex.Message);
-            return BadRequest(new { Error = "Invalid reservation time", Message = ex.Message });
-        }
-        catch (UnavailableTableException ex)
-        {
-            _logger.LogWarning("Reservation creation failed - table unavailable: {Message}", ex.Message);
-            return Conflict(new { Error = "Table unavailable", Message = ex.Message });
-        }
-        catch (BadRequestException ex)
-        {
-            _logger.LogWarning("Reservation creation failed - bad request: {Message}", ex.Message);
-            return BadRequest(new { Error = "Invalid request", Message = ex.Message });
         }
         catch (Exception ex)
         {

@@ -1,0 +1,306 @@
+@page "/reservations"
+@using DineEasy.SharedKernel.Models.Reservation
+@using DineEasy.BlazorServer.Services
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+@inject IReservationApiClient ReservationApiClient
+@inject AuthStateService AuthStateService
+@inject NavigationManager NavigationManager
+
+<PageTitle>Rezerwacje</PageTitle>
+
+<div class="container mt-5">
+    @if (!initialized)
+    {
+        <div class="text-center mt-5">
+            <p>Ładowanie danych użytkownika...</p>
+        </div>
+    }
+    else if (!AuthStateService.IsAuthenticated)
+    {
+        <div class="alert alert-warning">
+            <p>Musisz być zalogowany, aby zobaczyć rezerwacje.</p>
+            <a href="/login" class="btn btn-primary">Zaloguj się</a>
+        </div>
+    }
+    else
+    {
+        <div class="row">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-header">
+                        <h3>Moje rezerwacje</h3>
+                    </div>
+                    <div class="card-body">
+                        @if (isLoading)
+                        {
+                            <div class="text-center">
+                                <div class="spinner-border" role="status">
+                                    <span class="visually-hidden">Ładowanie...</span>
+                                </div>
+                            </div>
+                        }
+                        else if (reservations.Any())
+                        {
+                            <div class="table-responsive">
+                                <table class="table table-striped">
+                                    <thead>
+                                    <tr>
+                                        <th>Stolik</th>
+                                        <th>Data i godzina</th>
+                                        <th>Czas trwania</th>
+                                        <th>Status</th>
+                                        <th>Akcje</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    @foreach (var reservation in reservations)
+                                    {
+                                        <tr>
+                                            <td>Stolik @reservation.TableNumber</td>
+                                            <td>@reservation.ReservationDateTime.ToString("dd.MM.yyyy HH:mm")</td>
+                                            <td>@reservation.Duration godz.</td>
+                                            <td>
+                                                    <span class="badge @GetStatusBadgeClass(reservation.Status)">
+                                                        @GetStatusText(reservation.Status)
+                                                    </span>
+                                            </td>
+                                            <td>
+                                                <button class="btn btn-sm btn-outline-danger"
+                                                        @onclick="() => DeleteReservation(reservation.Id)"
+                                                        disabled="@isDeletingReservation">
+                                                    @if (isDeletingReservation)
+                                                    {
+                                                        <span class="spinner-border spinner-border-sm" role="status"></span>
+                                                    }
+                                                    else
+                                                    {
+                                                        <span>Usuń</span>
+                                                    }
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    }
+                                    </tbody>
+                                </table>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="text-center py-4">
+                                <p class="text-muted">Nie masz jeszcze żadnych rezerwacji.</p>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Nowa rezerwacja</h4>
+                    </div>
+                    <div class="card-body">
+                        <EditForm Model="@createReservationDto" OnValidSubmit="@HandleCreateReservation">
+                            <DataAnnotationsValidator />
+
+                            <div class="mb-3">
+                                <label for="tableId" class="form-label">Stolik</label>
+                                <InputNumber id="tableId" class="form-control" @bind-Value="createReservationDto.TableId" />
+                                <ValidationMessage For="@(() => createReservationDto.TableId)" class="text-danger" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="reservationDateTime" class="form-label">Data i godzina</label>
+                                <InputDate id="reservationDateTime" Type="InputDateType.DateTimeLocal" class="form-control" @bind-Value="createReservationDto.ReservationDateTime" />
+                                <ValidationMessage For="@(() => createReservationDto.ReservationDateTime)" class="text-danger" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="duration" class="form-label">Czas trwania (godziny)</label>
+                                <InputNumber id="duration" class="form-control" @bind-Value="createReservationDto.Duration" />
+                                <ValidationMessage For="@(() => createReservationDto.Duration)" class="text-danger" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="partySize" class="form-label">Liczba osób</label>
+                                <InputNumber id="partySize" class="form-control" @bind-Value="createReservationDto.PartySize" />
+                                <ValidationMessage For="@(() => createReservationDto.PartySize)" class="text-danger" />
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="specialRequests" class="form-label">Uwagi specjalne (opcjonalnie)</label>
+                                <InputTextArea id="specialRequests" class="form-control" rows="3" @bind-Value="createReservationDto.SpecialRequests" />
+                                <ValidationMessage For="@(() => createReservationDto.SpecialRequests)" class="text-danger" />
+                            </div>
+
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary" disabled="@isSubmitting">
+                                    @if (isSubmitting)
+                                    {
+                                        <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                    }
+                                    Zarezerwuj
+                                </button>
+                            </div>
+                        </EditForm>
+
+                        @if (!string.IsNullOrEmpty(errorMessage))
+                        {
+                            <div class="alert alert-danger mt-3">
+                                @errorMessage
+                            </div>
+                        }
+
+                        @if (!string.IsNullOrEmpty(successMessage))
+                        {
+                            <div class="alert alert-success mt-3">
+                                @successMessage
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    private List<ReservationDto> reservations = new();
+    private CreateReservationDto createReservationDto = new();
+    private bool isSubmitting = false;
+    private bool isLoading = false;
+    private bool isDeletingReservation = false;
+    private string errorMessage = string.Empty;
+    private string successMessage = string.Empty;
+
+    private bool initialized;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await AuthStateService.InitializeAsync();
+
+            if (AuthStateService.IsAuthenticated)
+            {
+                await LoadReservations();
+            }
+
+            initialized = true;
+            StateHasChanged();
+        }
+    }
+
+    private async Task LoadReservations()
+    {
+        isLoading = true;
+        try
+        {
+            Console.WriteLine("Starting to load reservations...");
+            var result = await ReservationApiClient.GetAllReservationsAsync();
+            Console.WriteLine($"API returned {result.Count()} reservations");
+        
+            foreach (var reservation in result)
+            {
+                Console.WriteLine($"Reservation ID: {reservation.Id}, Table: {reservation.TableNumber}, DateTime: {reservation.ReservationDateTime}");
+            }
+        
+            reservations = result.ToList();
+            Console.WriteLine($"Final reservations count: {reservations.Count}");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine($"Error loading reservations: {ex.Message}");
+            errorMessage = "Błąd podczas ładowania rezerwacji: " + ex.Message;
+        }
+        finally
+        {
+            isLoading = false;
+        }
+    }
+
+    private async Task HandleCreateReservation()
+    {
+        isSubmitting = true;
+        errorMessage = string.Empty;
+        successMessage = string.Empty;
+
+        try
+        {
+            var result = await ReservationApiClient.CreateReservationAsync(createReservationDto);
+
+            if (result != null)
+            {
+                successMessage = "Rezerwacja została utworzona pomyślnie!";
+                createReservationDto = new();
+                await LoadReservations();
+            }
+            else
+            {
+                errorMessage = "Nie udało się utworzyć rezerwacji.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Wystąpił błąd podczas tworzenia rezerwacji: " + ex.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+
+    private async Task DeleteReservation(int reservationId)
+    {
+        isDeletingReservation = true;
+        errorMessage = string.Empty;
+
+        try
+        {
+            var success = await ReservationApiClient.DeleteReservationAsync(reservationId);
+
+            if (success)
+            {
+                successMessage = "Rezerwacja została usunięta.";
+                await LoadReservations();
+            }
+            else
+            {
+                errorMessage = "Nie udało się usunąć rezerwacji.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Błąd podczas usuwania rezerwacji: " + ex.Message;
+        }
+        finally
+        {
+            isDeletingReservation = false;
+        }
+    }
+
+    private string GetStatusBadgeClass(DineEasy.SharedKernel.Models.Enums.ReservationStatus status)
+    {
+        return status switch
+        {
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Pending => "bg-warning",
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Confirmed => "bg-success",
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Cancelled => "bg-danger",
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Completed => "bg-primary",
+            _ => "bg-secondary"
+        };
+    }
+
+    private string GetStatusText(DineEasy.SharedKernel.Models.Enums.ReservationStatus status)
+    {
+        return status switch
+        {
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Pending => "Oczekująca",
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Confirmed => "Potwierdzona",
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Cancelled => "Anulowana",
+            DineEasy.SharedKernel.Models.Enums.ReservationStatus.Completed => "Zakończona",
+            _ => "Nieznany"
+        };
+    }
+}

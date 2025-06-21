@@ -1,0 +1,108 @@
+@page "/login"
+@using DineEasy.SharedKernel.Models.Auth
+@rendermode InteractiveServer
+@using System.ComponentModel.DataAnnotations
+@using DineEasy.BlazorServer.Services
+@inject IAuthApiClient AuthApiClient
+@inject NavigationManager NavigationManager
+@inject AuthStateService AuthStateService
+
+<PageTitle>Logowanie</PageTitle>
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="text-center">Logowanie</h3>
+                </div>
+                <div class="card-body">
+                    <EditForm Model="@loginDto" OnValidSubmit="@HandleLogin">
+                        <DataAnnotationsValidator />
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <InputText id="email" type="email" class="form-control" @bind-Value="loginDto.Email" />
+                            <ValidationMessage For="@(() => loginDto.Email)" class="text-danger" />
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Hasło</label>
+                            <InputText id="password" type="password" class="form-control" @bind-Value="loginDto.Password" />
+                            <ValidationMessage For="@(() => loginDto.Password)" class="text-danger" />
+                        </div>
+
+                        <div class="d-grid">
+                            <button type="submit" class="btn btn-primary" disabled="@isSubmitting">
+                                @if (isSubmitting)
+                                {
+                                    <span class="spinner-border spinner-border-sm me-2" role="status"></span>
+                                }
+                                Zaloguj się
+                            </button>
+                        </div>
+                    </EditForm>
+
+                    <div class="text-center mt-3">
+                        <p>Nie masz konta? <a href="/register">Zarejestruj się</a></p>
+                    </div>
+
+                    @if (!string.IsNullOrEmpty(errorMessage))
+                    {
+                        <div class="alert alert-danger mt-3">
+                            @errorMessage
+                        </div>
+                    }
+
+                    @if (!string.IsNullOrEmpty(successMessage))
+                    {
+                        <div class="alert alert-success mt-3">
+                            @successMessage
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@code {
+    private LoginDto loginDto = new();
+    private bool isSubmitting = false;
+    private string errorMessage = string.Empty;
+    private string successMessage = string.Empty;
+
+    private async Task HandleLogin()
+    {
+        isSubmitting = true;
+        errorMessage = string.Empty;
+        successMessage = string.Empty;
+
+        try
+        {
+            var result = await AuthApiClient.LoginAsync(loginDto);
+
+            if (result != null)
+            {
+                successMessage = "Logowanie przebiegło pomyślnie!";
+        
+                // Ustaw stan zalogowania
+                AuthStateService.SetAuthenticatedAsync(result.Username, result.Token);
+        
+                NavigationManager.NavigateTo("/");
+            }
+            else
+            {
+                errorMessage = "Nieprawidłowy email lub hasło.";
+            }
+        }
+        catch (Exception ex)
+        {
+            errorMessage = "Wystąpił błąd podczas logowania: " + ex.Message;
+        }
+        finally
+        {
+            isSubmitting = false;
+        }
+    }
+}

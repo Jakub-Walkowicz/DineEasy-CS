@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineEasy.WebAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adabd551b086ba6d1ddac165c673aa648863c92e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e0729698781a183f94e6d0fccbe430b5fc9497e8")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineEasy.WebAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineEasy.WebAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

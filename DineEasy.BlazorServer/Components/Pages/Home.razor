@@ -1,25 +1,154 @@
 ﻿@page "/"
-@inject NavigationManager Navigation
 
 <PageTitle>DineEasy</PageTitle>
 
-<div class="container-fluid p-4">
-    <div class="row justify-content-center">
-        <div class="col-md-8 text-center">
+<div class="main-content">
+    <div class="header-section">
+        <h1>DineEasy</h1>
+        <h2>Rezerwuj miejsca w swoich ulubionych restauracjach</h2>
+        <p>Szybko i wygodnie zarezerwuj stolik w wybranej restauracji. Sprawdź menu, wybierz termin i ciesz się smakiem.</p>
 
-            <h1 class="display-3 mb-4" style="color: #2c3e50;">🍽️ DineEasy</h1>
-
-            <p class="lead mb-4">Witamy w aplikacji do rezerwacji stolików</p>
-
-            <RadzenButton Text="Menu"
-                          ButtonStyle="ButtonStyle.Primary"
-                          Size="ButtonSize.Large"
-                          Click="@(() => Navigation.NavigateTo("/menu"))" />
-
+        <div class="buttons">
+            <a href="/register" class="btn-register">Załóż konto</a>
+            <a href="/menu" class="btn-menu">Zobacz menu</a>
         </div>
+    </div>
+
+    <div class="info-section">
+        <div class="info-box">
+            <h3>📅 Łatwa rezerwacja</h3>
+            <p>Wybierz restaurację, datę i godzinę - to wszystko!</p>
+        </div>
+
+        <div class="info-box">
+            <h3>🍽️ Różnorodne menu</h3>
+            <p>Sprawdź menu restauracji przed wizytą.</p>
+        </div>
+
+        <div class="info-box">
+            <h3>⭐ Sprawdzone miejsca</h3>
+            <p>Tylko najlepsze restauracje w naszej ofercie.</p>
+        </div>
+    </div>
+
+    <div class="bottom-section">
+        <h3>Zacznij już dziś!</h3>
+        <p>Załóż darmowe konto i dokonaj swojej pierwszej rezerwacji.</p>
+        <a href="/register" class="btn-start">Zarejestruj się</a>
     </div>
 </div>
 
-@code {
+<style>
+    .main-content {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+    }
 
-}
+    .header-section {
+        text-align: center;
+        margin-bottom: 50px;
+        padding: 40px 20px;
+        background-color: #f8f9fa;
+        border-radius: 8px;
+    }
+
+    .header-section h1 {
+        color: #ff6b35;
+        font-size: 3rem;
+        margin-bottom: 10px;
+    }
+
+    .header-section h2 {
+        color: #333;
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .header-section p {
+        color: #666;
+        font-size: 1.1rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .buttons {
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .btn-register, .btn-menu, .btn-start {
+        padding: 12px 30px;
+        text-decoration: none;
+        border-radius: 5px;
+        font-weight: bold;
+        transition: all 0.3s;
+    }
+
+    .btn-register, .btn-start {
+        background-color: #ff6b35;
+        color: white;
+    }
+
+    .btn-register:hover, .btn-start:hover {
+        background-color: #e55a2b;
+        color: white;
+    }
+
+    .btn-menu {
+        background-color: transparent;
+        color: #ff6b35;
+        border: 2px solid #ff6b35;
+    }
+
+    .btn-menu:hover {
+        background-color: #ff6b35;
+        color: white;
+    }
+
+    .info-section {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 50px;
+    }
+
+    .info-box {
+        background: white;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        text-align: center;
+    }
+
+    .info-box h3 {
+        color: #333;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+    }
+
+    .info-box p {
+        color: #666;
+        line-height: 1.5;
+    }
+
+    .bottom-section {
+        text-align: center;
+        padding: 40px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .bottom-section h3 {
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .bottom-section p {
+        color: #666;
+        margin-bottom: 25px;
+    }
+</style>

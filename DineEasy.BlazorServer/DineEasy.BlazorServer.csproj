@@ -12,6 +12,7 @@
 
     <ItemGroup>
       <ProjectReference Include="..\DineEasy.Application\DineEasy.Application.csproj" />
+      <ProjectReference Include="..\DineEasy.SharedKernel\DineEasy.SharedKernel.csproj" />
     </ItemGroup>
 
 </Project>

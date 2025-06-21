@@ -1,4 +1,7 @@
 ﻿@inherits LayoutComponentBase
+@using DineEasy.BlazorServer.Services
+@inject IJSRuntime JSRuntime
+@inject AuthStateService AuthStateService
 
 <div class="page">
     <div class="sidebar">
@@ -6,17 +9,12 @@
     </div>
 
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-            <link href="_content/Radzen.Blazor/css/material-base.css" rel="stylesheet" />
-            
-        </div>
+        <link href="_content/Radzen.Blazor/css/material-base.css" rel="stylesheet">
+        <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
 
         <article class="content px-4">
             @Body
         </article>
-        <script src="_content/Radzen.Blazor/Radzen.Blazor.js"></script>
-        
     </main>
 </div>
 
@@ -25,3 +23,14 @@
     <a href="" class="reload">Reload</a>
     <a class="dismiss">🗙</a>
 </div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            await AuthStateService.InitializeAsync();
+            StateHasChanged(); // Teraz wywołaj ręcznie
+        }
+    }
+}

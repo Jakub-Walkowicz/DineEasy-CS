@@ -1,0 +1,12 @@
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/bin/Debug/net8.0/DineEasy.SharedKernel.deps.json
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/bin/Debug/net8.0/DineEasy.SharedKernel.dll
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/bin/Debug/net8.0/DineEasy.SharedKernel.pdb
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.AssemblyInfoInputs.cache
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.AssemblyInfo.cs
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.csproj.CoreCompileInputs.cache
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.sourcelink.json
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.dll
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/refint/DineEasy.SharedKernel.dll
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/DineEasy.SharedKernel.pdb
+/Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.SharedKernel/obj/Debug/net8.0/ref/DineEasy.SharedKernel.dll

@@ -1051,6 +1051,7 @@
       "DineEasy.Domain/1.0.0": {
         "dependencies": {
           "BCrypt.Net-Next": "4.0.3",
+          "DineEasy.SharedKernel": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.17",
           "System.IdentityModel.Tokens.Jwt": "8.12.1"
         },
@@ -1069,6 +1070,14 @@
         },
         "runtime": {
           "DineEasy.Infrastructure.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
+      "DineEasy.SharedKernel/1.0.0": {
+        "runtime": {
+          "DineEasy.SharedKernel.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -1632,6 +1641,11 @@
       "sha512": ""
     },
     "DineEasy.Infrastructure/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DineEasy.SharedKernel/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

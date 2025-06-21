@@ -1,30 +1,130 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
+﻿@inject AuthStateService AuthStateService
+@inject NavigationManager NavigationManager
+@using DineEasy.BlazorServer.Services
+@implements IDisposable
+@rendermode InteractiveServer
+
+<div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="">DineEasy.BlazorServer</a>
+        <a class="navbar-brand brand-simple" href="">
+            🍽️ <strong>DineEasy</strong>
+        </a>
     </div>
 </div>
+
+<style>
+    .brand-simple {
+        color: #ff6b35 !important;
+        font-weight: bold;
+        font-size: 1.4rem;
+        text-decoration: none !important;
+        transition: color 0.3s ease;
+    }
+
+    .brand-simple:hover {
+        color: #ffaa85 !important;
+    }
+
+    .brand-simple strong {
+        margin-left: 8px;
+    }
+
+    .logout-btn {
+        background: none;
+        border: none;
+        color: inherit;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-align: left;
+        cursor: pointer;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+    .logout-btn:hover {
+        color: #ff6b35;
+        background-color: rgba(255, 107, 53, 0.1);
+    }
+
+    .user-info {
+        color: #ff6b35;
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+        margin-bottom: 10px;
+    }
+</style>
 
 <input type="checkbox" title="Navigation menu" class="navbar-toggler"/>
 
 <div class="nav-scrollable" onclick="document.querySelector('.navbar-toggler').click()">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
+    <nav class="flex-column" style="height: 100%; display: flex;">
+        <div style="flex: 1;">
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="menu">
+                    <span class="oi oi-fork" aria-hidden="true" style="color: #ff6b35;"></span> 🍽 Menu
+                </NavLink>
+            </div>
+
+            <div class="nav-item px-3">
+                <NavLink class="nav-link" href="reservations">
+                    <span class="oi oi-fork" aria-hidden="true"></span> 📅 Rezerwacje
+                </NavLink>
+            </div>
         </div>
 
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="create-reservation">
-                <span class="bi bi-calendar-plus-fill" aria-hidden="true"></span> Nowa rezerwacja
-            </NavLink>
+        <div style="margin-top: auto; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 10px;">
+            @if (AuthStateService.IsAuthenticated)
+            {
+                <!-- Sekcja dla zalogowanych użytkowników -->
+                <div class="user-info">
+                    👋 Witaj, @AuthStateService.Username!
+                </div>
+                <div class="nav-item px-3">
+                    <button class="nav-link logout-btn" @onclick="HandleLogout">
+                        <span class="bi bi-box-arrow-right" aria-hidden="true"></span> Wyloguj się
+                    </button>
+                </div>
+            }
+            else
+            {
+                <!-- Sekcja dla niezalogowanych użytkowników -->
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="login">
+                        <span class="bi bi-box-arrow-in-right" aria-hidden="true"></span> Zaloguj się
+                    </NavLink>
+                </div>
+                <div class="nav-item px-3">
+                    <NavLink class="nav-link" href="register">
+                        <span class="bi bi-person-plus" aria-hidden="true"></span> Rejestracja
+                    </NavLink>
+                </div>
+            }
         </div>
-        
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="table">
-                <span class="bi bi-calendar-plus-fill" aria-hidden="true"></span> Stoliki
-            </NavLink>
-        </div>
-        
     </nav>
 </div>
+
+@code {
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            AuthStateService.OnChange += StateHasChanged; 
+            await AuthStateService.InitializeAsync();
+        }
+    }
+
+
+
+    private async Task HandleLogout()
+    {
+        Console.WriteLine("LOGOUT CLICKED!");
+        await AuthStateService.LogoutAsync();
+        NavigationManager.NavigateTo("/");
+    }
+
+    public void Dispose()
+    {
+        AuthStateService.OnChange -= StateHasChanged;
+    }
+}
