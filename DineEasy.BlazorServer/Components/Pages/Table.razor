@@ -1,0 +1,87 @@
+@page "/table"
+@rendermode InteractiveServer
+
+<PageTitle>Stoliki - DineEasy</PageTitle>
+
+<div class="container mt-4">
+   <h2>Stoliki</h2>
+   
+   <!-- Lista stolików -->
+   <div class="row">
+       @foreach (var table in tables)
+       {
+           <div class="col-md-4 mb-3">
+               <RadzenCard>
+                   <h5>Stolik @table.TableNumber</h5>
+                   <p>Miejsca: @table.Capacity</p>
+                   <p>Status: @(table.IsActive ? "Aktywny" : "Nieaktywny")</p>
+                   <RadzenButton Text="Usuń" 
+                                ButtonStyle="ButtonStyle.Danger" 
+                                Size="ButtonSize.Small"
+                                Click="@(() => DeleteTable(table.Id))" />
+               </RadzenCard>
+           </div>
+       }
+   </div>
+   
+   <!-- Dodaj nowy -->
+   <RadzenCard class="mt-4">
+       <h5>Dodaj Nowy Stolik</h5>
+       <div class="row">
+           <div class="col-md-3">
+               <RadzenNumeric @bind-Value="newTableNumber" Placeholder="Numer" />
+           </div>
+           <div class="col-md-3">
+               <RadzenNumeric @bind-Value="newTableCapacity" Placeholder="Miejsca" />
+           </div>
+           <div class="col-md-3">
+               <RadzenButton Text="Dodaj" 
+                            ButtonStyle="ButtonStyle.Success"
+                            Click="@AddTable" />
+           </div>
+       </div>
+   </RadzenCard>
+</div>
+
+@code {
+   private List<TableDto> tables = new()
+   {
+       new() { Id = 1, TableNumber = 1, Capacity = 4, IsActive = true },
+       new() { Id = 2, TableNumber = 2, Capacity = 2, IsActive = true },
+       new() { Id = 3, TableNumber = 3, Capacity = 6, IsActive = true }
+   };
+
+   private int newTableNumber = 0;
+   private int newTableCapacity = 0;
+
+   private void AddTable()
+   {
+       if (newTableNumber > 0 && newTableCapacity > 0)
+       {
+           var newId = tables.Max(t => t.Id) + 1;
+           tables.Add(new TableDto 
+           { 
+               Id = newId, 
+               TableNumber = newTableNumber, 
+               Capacity = newTableCapacity, 
+               IsActive = true 
+           });
+           
+           newTableNumber = 0;
+           newTableCapacity = 0;
+       }
+   }
+
+   private void DeleteTable(int id)
+   {
+       tables.RemoveAll(t => t.Id == id);
+   }
+
+   public class TableDto
+   {
+       public int Id { get; set; }
+       public int TableNumber { get; set; }
+       public int Capacity { get; set; }
+       public bool IsActive { get; set; }
+   }
+}

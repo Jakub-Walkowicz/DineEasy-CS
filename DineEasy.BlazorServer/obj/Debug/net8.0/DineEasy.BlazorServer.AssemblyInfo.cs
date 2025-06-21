@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineEasy.BlazorServer")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ad0f52fecf81e650888405854f1f5da4003d809")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+827ae46b990299e3d4d84a0a8324ac26661f4c78")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineEasy.BlazorServer")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineEasy.BlazorServer")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
