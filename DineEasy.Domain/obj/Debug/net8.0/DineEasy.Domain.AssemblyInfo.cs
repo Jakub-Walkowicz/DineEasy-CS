@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineEasy.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adabd551b086ba6d1ddac165c673aa648863c92e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+2ad0f52fecf81e650888405854f1f5da4003d809")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineEasy.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineEasy.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

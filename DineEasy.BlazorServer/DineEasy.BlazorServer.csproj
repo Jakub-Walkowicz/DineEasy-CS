@@ -10,4 +10,8 @@
       <PackageReference Include="Radzen.Blazor" Version="7.1.1" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\DineEasy.Application\DineEasy.Application.csproj" />
+    </ItemGroup>
+
 </Project>

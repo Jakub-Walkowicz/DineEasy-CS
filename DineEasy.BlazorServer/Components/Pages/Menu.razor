@@ -1,0 +1,37 @@
+@page "/menu"
+
+<PageTitle>Menu - DineEasy</PageTitle>
+
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Menu Restauracji</h2>
+    
+    <div class="row">
+        <div class="col-md-6">
+            <RadzenCard class="mb-3">
+                <h4>Przystawki</h4>
+                <p>Bruschetta - 15 zł</p>
+                <p>Krewetki w czosnku - 25 zł</p>
+                <p>Carpaccio - 30 zł</p>
+            </RadzenCard>
+        </div>
+        
+        <div class="col-md-6">
+            <RadzenCard class="mb-3">
+                <h4>Dania główne</h4>
+                <p>Stek wołowy - 45 zł</p>
+                <p>Łosoś grillowany - 40 zł</p>
+                <p>Risotto - 35 zł</p>
+            </RadzenCard>
+        </div>
+    </div>
+    
+    <div class="text-center mt-4">
+        <RadzenButton Text="Powrót" 
+                      ButtonStyle="ButtonStyle.Secondary"
+                      Click="@(() => Navigation.NavigateTo("/"))" />
+    </div>
+</div>
+
+@code {
+    [Inject] NavigationManager Navigation { get; set; } = default!;
+}
