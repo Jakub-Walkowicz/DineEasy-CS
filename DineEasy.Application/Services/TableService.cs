@@ -2,6 +2,7 @@ using DineEasy.Application.DTOs.Table;
 using DineEasy.Application.Interfaces;
 using DineEasy.Domain.Interfaces;
 using DineEasy.Application.Extensions;
+using DineEasy.SharedKernel.Models.Table;
 using Kiosk.WebAPI.Db.Exceptions;
 
 namespace DineEasy.Application.Services;

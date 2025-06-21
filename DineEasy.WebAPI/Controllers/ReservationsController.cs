@@ -1,6 +1,6 @@
-using DineEasy.Application.DTOs.Reservation;
 using DineEasy.Application.Exceptions;
 using DineEasy.Application.Interfaces;
+using DineEasy.SharedKernel.Models.Reservation;
 using Kiosk.WebAPI.Db.Exceptions;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -21,22 +21,61 @@ public class ReservationsController : ControllerBase
     }
 
     [HttpGet]
-    [Authorize(Roles="Admin")]
-    public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAll()
+[Authorize(Roles="Admin,User")]
+public async Task<ActionResult<IEnumerable<ReservationDto>>> GetAll()
+{
+    try
     {
-        try
+        _logger.LogInformation("Getting reservations for user: {User}", User.Identity.Name);
+        
+        // DEBUG: Wypisz wszystkie claimy
+        foreach (var claim in User.Claims)
         {
-            _logger.LogInformation("Getting all reservations");
-            var reservations = await _reservationService.GetAllAsync();
-            _logger.LogDebug("Retrieved {Count} reservations", reservations.Count());
-            return Ok(reservations);
+            _logger.LogInformation("Claim: {Type} = {Value}", claim.Type, claim.Value);
         }
-        catch (Exception ex)
+        
+        // Sprawdź rolę użytkownika
+        if (User.IsInRole("Admin"))
         {
-            _logger.LogError(ex, "Error retrieving all reservations");
-            return StatusCode(500, "An error occurred while retrieving reservations");
+            _logger.LogInformation("User is Admin - returning all reservations");
+            var allReservations = await _reservationService.GetAllAsync();
+            return Ok(allReservations);
+        }
+        else if (User.IsInRole("User"))
+        {
+            _logger.LogInformation("User is User - returning user reservations");
+            
+            // Użyj ClaimTypes.NameIdentifier
+            var userIdClaim = User.FindFirst(System.Security.Claims.ClaimTypes.NameIdentifier);
+            
+            if (userIdClaim == null)
+            {
+                _logger.LogWarning("Could not find user ID claim in token");
+                return BadRequest("Invalid user token - no user ID found");
+            }
+            
+            if (!int.TryParse(userIdClaim.Value, out int userId))
+            {
+                _logger.LogWarning("Could not parse user ID: {UserIdValue}", userIdClaim.Value);
+                return BadRequest("Invalid user ID format");
+            }
+            
+            _logger.LogInformation("Found user ID: {UserId}", userId);
+            var userReservations = await _reservationService.GetAllByUserIdAsync(userId);
+            return Ok(userReservations);
+        }
+        else
+        {
+            _logger.LogWarning("User has no valid role");
+            return Forbid("User does not have required role");
         }
     }
+    catch (Exception ex)
+    {
+        _logger.LogError(ex, "Error retrieving reservations");
+        return StatusCode(500, "An error occurred while retrieving reservations");
+    }
+}
 
     [HttpGet("{id}")]
     [Authorize(Roles="Admin,User")]

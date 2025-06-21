@@ -1,4 +1,5 @@
 using DineEasy.Application.DTOs.Table;
+using DineEasy.SharedKernel.Models.Table;
 
 namespace DineEasy.Application.Interfaces;
 

@@ -9,7 +9,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DineEasy.Infrastructure", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DineEasy.WebAPI", "DineEasy.WebAPI\DineEasy.WebAPI.csproj", "{BADC09C0-807B-4F07-B60E-F4D748889403}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DineEasy.BlazorServer", "DineEasy.BlazorServer\DineEasy.BlazorServer.csproj", "{F80992E5-60EE-4077-A3CE-0B74FD75AF88}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DineEasy.WebAssembly", "DineEasy.WebAssembly\DineEasy.WebAssembly.csproj", "{60870A9A-5F4D-4C77-9A23-314963D4461E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DineEasy.BlazorServer", "DineEasy.BlazorServer\DineEasy.BlazorServer.csproj", "{EE5E1713-6150-4834-B6FC-83D7F2BAF174}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +35,13 @@ Global
 		{BADC09C0-807B-4F07-B60E-F4D748889403}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BADC09C0-807B-4F07-B60E-F4D748889403}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BADC09C0-807B-4F07-B60E-F4D748889403}.Release|Any CPU.Build.0 = Release|Any CPU
-		{F80992E5-60EE-4077-A3CE-0B74FD75AF88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{F80992E5-60EE-4077-A3CE-0B74FD75AF88}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{F80992E5-60EE-4077-A3CE-0B74FD75AF88}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{F80992E5-60EE-4077-A3CE-0B74FD75AF88}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60870A9A-5F4D-4C77-9A23-314963D4461E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60870A9A-5F4D-4C77-9A23-314963D4461E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60870A9A-5F4D-4C77-9A23-314963D4461E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60870A9A-5F4D-4C77-9A23-314963D4461E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EE5E1713-6150-4834-B6FC-83D7F2BAF174}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EE5E1713-6150-4834-B6FC-83D7F2BAF174}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EE5E1713-6150-4834-B6FC-83D7F2BAF174}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EE5E1713-6150-4834-B6FC-83D7F2BAF174}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

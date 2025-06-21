@@ -1,0 +1,641 @@
+2025-06-20 22:56:04.328 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 22:56:04.383 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 22:56:04.415 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 22:56:04.417 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 22:56:04.417 +02:00 [INF] Hosting environment: Development
+2025-06-20 22:56:04.417 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 22:56:04.802 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 22:56:04.900 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 98.2967ms
+2025-06-20 22:56:04.966 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 22:56:05.076 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 110.7216ms
+2025-06-20 22:56:10.528 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 22:56:10.533 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 22:56:10.561 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 22:56:10.564 +02:00 [INF] AuthenticationScheme: Bearer was challenged.
+2025-06-20 22:56:10.564 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 401 0 null 35.6926ms
+2025-06-20 22:57:04.018 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 58
+2025-06-20 22:57:04.021 +02:00 [INF] CORS policy execution successful.
+2025-06-20 22:57:04.025 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 22:57:04.050 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 22:57:04.093 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 22:57:04.119 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 67.0837ms
+2025-06-20 22:57:04.119 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 22:57:04.120 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 106.699ms
+2025-06-20 22:57:13.242 +02:00 [INF] Application is shutting down...
+2025-06-20 22:57:15.968 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 22:57:16.001 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 22:57:16.030 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 22:57:16.032 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 22:57:16.032 +02:00 [INF] Hosting environment: Development
+2025-06-20 22:57:16.032 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 22:57:16.348 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 22:57:16.452 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 104.7575ms
+2025-06-20 22:57:16.502 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 22:57:16.607 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 105.4547ms
+2025-06-20 22:57:32.420 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 64
+2025-06-20 22:57:32.429 +02:00 [INF] CORS policy execution successful.
+2025-06-20 22:57:32.430 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 22:57:32.472 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 22:57:32.490 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 22:57:32.521 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 22:57:32.522 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-20 22:57:32.523 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-20 22:57:32.700 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 22:57:32.874 +02:00 [WRN] Failed login attempt for email: admin@dineeasy.com
+2025-06-20 22:57:32.874 +02:00 [WRN] Failed login attempt for email: admin@dineeasy.com
+2025-06-20 22:57:32.877 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 352.9244ms.
+2025-06-20 22:57:32.880 +02:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-20 22:57:32.884 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 392.5972ms
+2025-06-20 22:57:32.885 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 22:57:32.885 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 401 null text/plain; charset=utf-8 465.1024ms
+2025-06-20 22:58:39.272 +02:00 [INF] Application is shutting down...
+2025-06-20 22:58:41.902 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Tables" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Tables" PRIMARY KEY AUTOINCREMENT,
+    "TableNumber" INTEGER NOT NULL,
+    "Capacity" INTEGER NOT NULL,
+    "IsActive" INTEGER NOT NULL DEFAULT 1,
+    CONSTRAINT "CK_Table_Capacity" CHECK (Capacity > 0 AND Capacity <= 20)
+);
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "TimeSlots" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_TimeSlots" PRIMARY KEY AUTOINCREMENT,
+    "StartTime" TEXT NOT NULL,
+    "EndTime" TEXT NOT NULL,
+    "DayOfWeek" INTEGER NOT NULL,
+    CONSTRAINT "CK_TimeSlot_EndTimeAfterStartTime" CHECK (EndTime > StartTime)
+);
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Users" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Users" PRIMARY KEY AUTOINCREMENT,
+    "Username" TEXT NOT NULL,
+    "Email" TEXT NOT NULL,
+    "PasswordHash" TEXT NOT NULL,
+    "Role" TEXT NOT NULL DEFAULT 'User',
+    "CreatedAt" TEXT NOT NULL DEFAULT (datetime('now'))
+);
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Reservations" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Reservations" PRIMARY KEY AUTOINCREMENT,
+    "UserId" INTEGER NOT NULL,
+    "TableId" INTEGER NOT NULL,
+    "ReservationDateTime" TEXT NOT NULL,
+    "Duration" INTEGER NOT NULL,
+    "PartySize" INTEGER NOT NULL,
+    "Status" TEXT NOT NULL,
+    "SpecialRequests" TEXT NULL,
+    "CreatedAt" TEXT NOT NULL,
+    CONSTRAINT "CK_Reservation_Duration" CHECK (Duration > 0 AND Duration <= 5),
+    CONSTRAINT "CK_Reservation_PartySize" CHECK (PartySize > 0 AND PartySize <= 20),
+    CONSTRAINT "FK_Reservations_Tables_TableId" FOREIGN KEY ("TableId") REFERENCES "Tables" ("Id") ON DELETE RESTRICT,
+    CONSTRAINT "FK_Reservations_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE RESTRICT
+);
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "UserProfiles" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_UserProfiles" PRIMARY KEY AUTOINCREMENT,
+    "FirstName" TEXT NOT NULL,
+    "LastName" TEXT NOT NULL,
+    "PhoneNumber" TEXT NULL,
+    "DateOfBirth" TEXT NULL,
+    "CreatedAt" TEXT NOT NULL,
+    "UserId" INTEGER NOT NULL,
+    CONSTRAINT "FK_UserProfiles_Users_UserId" FOREIGN KEY ("UserId") REFERENCES "Users" ("Id") ON DELETE CASCADE
+);
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Tables" ("Id", "Capacity", "IsActive", "TableNumber")
+VALUES (1, 2, 1, 1);
+SELECT changes();
+
+INSERT INTO "Tables" ("Id", "Capacity", "IsActive", "TableNumber")
+VALUES (2, 4, 1, 2);
+SELECT changes();
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "TimeSlots" ("Id", "DayOfWeek", "EndTime", "StartTime")
+VALUES (1, 1, '19:00:00', '18:00:00');
+SELECT changes();
+
+INSERT INTO "TimeSlots" ("Id", "DayOfWeek", "EndTime", "StartTime")
+VALUES (2, 1, '20:00:00', '19:00:00');
+SELECT changes();
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("Id", "CreatedAt", "Email", "PasswordHash", "Role", "Username")
+VALUES (1, '2024-01-01 00:00:00', 'admin@dineeasy.com', '$2a$11$7CRPqYLlLC/SAnE.ccYgbOBWo99YYwd6XxqXVeoi8LbczwsEXbXpy', 'Admin', 'admin123123');
+SELECT changes();
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserProfiles" ("Id", "CreatedAt", "DateOfBirth", "FirstName", "LastName", "PhoneNumber", "UserId")
+VALUES (1, '2024-01-01 00:00:00', '1990-01-01 00:00:00', 'Adam', 'Kowalski', '0123456789', 1);
+SELECT changes();
+2025-06-20 22:58:42.147 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Reservations_TableId_DateTime" ON "Reservations" ("TableId", "ReservationDateTime");
+2025-06-20 22:58:42.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Reservations_UserId" ON "Reservations" ("UserId");
+2025-06-20 22:58:42.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Tables_Number" ON "Tables" ("TableNumber");
+2025-06-20 22:58:42.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_TimeSlots_StartTime_EndTime_DayOfWeek" ON "TimeSlots" ("StartTime", "EndTime", "DayOfWeek");
+2025-06-20 22:58:42.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_UserProfiles_UserId" ON "UserProfiles" ("UserId");
+2025-06-20 22:58:42.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Users_Email" ON "Users" ("Email");
+2025-06-20 22:58:42.148 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE UNIQUE INDEX "IX_Users_Username" ON "Users" ("Username");
+2025-06-20 22:58:42.158 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 22:58:42.181 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 22:58:42.183 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 22:58:42.183 +02:00 [INF] Hosting environment: Development
+2025-06-20 22:58:42.183 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 22:58:42.755 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 22:58:42.851 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 97.3414ms
+2025-06-20 22:58:42.899 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 22:58:42.998 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 98.562ms
+2025-06-20 22:59:23.226 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 64
+2025-06-20 22:59:23.232 +02:00 [INF] CORS policy execution successful.
+2025-06-20 22:59:23.233 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 22:59:23.259 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 22:59:23.271 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 22:59:23.300 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 22:59:23.301 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-20 22:59:23.301 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-20 22:59:23.472 +02:00 [INF] Executed DbCommand (3ms) [Parameters=[@__email_0='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 22:59:23.646 +02:00 [WRN] Failed login attempt for email: admin@dineeasy.com
+2025-06-20 22:59:23.646 +02:00 [WRN] Failed login attempt for email: admin@dineeasy.com
+2025-06-20 22:59:23.648 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 346.3041ms.
+2025-06-20 22:59:23.652 +02:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-20 22:59:23.654 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 381.1575ms
+2025-06-20 22:59:23.654 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 22:59:23.654 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 401 null text/plain; charset=utf-8 428.7184ms
+2025-06-20 22:59:55.518 +02:00 [INF] Application is shutting down...
+2025-06-20 23:02:49.881 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 23:02:49.927 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 23:02:49.954 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 23:02:49.956 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 23:02:49.956 +02:00 [INF] Hosting environment: Development
+2025-06-20 23:02:49.956 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 23:02:50.143 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 23:02:50.231 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 88.7652ms
+2025-06-20 23:02:50.279 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 23:02:50.371 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.4376ms
+2025-06-20 23:02:57.466 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 64
+2025-06-20 23:02:57.483 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:02:57.484 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 23:02:57.527 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:02:57.543 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:02:57.574 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:02:57.575 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-20 23:02:57.576 +02:00 [INF] Login attempt for email: admin@dineeasy.com
+2025-06-20 23:02:57.749 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 18)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:02:57.922 +02:00 [WRN] Failed login attempt for email: admin@dineeasy.com
+2025-06-20 23:02:57.922 +02:00 [WRN] Failed login attempt for email: admin@dineeasy.com
+2025-06-20 23:02:57.925 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.UnauthorizedObjectResult in 348.3737ms.
+2025-06-20 23:02:57.928 +02:00 [INF] Executing UnauthorizedObjectResult, writing value of type 'System.String'.
+2025-06-20 23:02:57.930 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 385.5895ms
+2025-06-20 23:02:57.930 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:02:57.931 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 401 null text/plain; charset=utf-8 464.8667ms
+2025-06-20 23:03:15.795 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 62
+2025-06-20 23:03:15.797 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:03:15.799 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:03:15.804 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Register(DineEasy.SharedKernel.Models.Auth.RegisterDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:03:15.817 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:03:15.853 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) in 49.0378ms
+2025-06-20 23:03:15.853 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:03:15.853 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 400 null application/problem+json; charset=utf-8 58.2564ms
+2025-06-20 23:04:08.251 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 135
+2025-06-20 23:04:08.252 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:04:08.254 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:04:08.254 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Register(DineEasy.SharedKernel.Models.Auth.RegisterDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:04:08.265 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:04:08.268 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) in 13.6103ms
+2025-06-20 23:04:08.268 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:04:08.268 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 400 null application/problem+json; charset=utf-8 17.0758ms
+2025-06-20 23:04:18.084 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 135
+2025-06-20 23:04:18.085 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:04:18.085 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:04:18.085 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Register(DineEasy.SharedKernel.Models.Auth.RegisterDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:04:18.088 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:04:18.089 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) in 3.6309ms
+2025-06-20 23:04:18.089 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:04:18.089 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 400 null application/problem+json; charset=utf-8 4.5369ms
+2025-06-20 23:04:27.317 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/register - application/json 137
+2025-06-20 23:04:27.317 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:04:27.317 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:04:27.317 +02:00 [INF] Route matched with {action = "Register", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Register(DineEasy.SharedKernel.Models.Auth.RegisterDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:04:27.319 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:04:27.321 +02:00 [INF] Registration attempt for email: user@dineeasy.com
+2025-06-20 23:04:27.323 +02:00 [INF] Registration attempt for email: user@dineeasy.com
+2025-06-20 23:04:27.383 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u"
+    WHERE "u"."Email" = @__email_0)
+2025-06-20 23:04:27.386 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__username_0='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "Users" AS "u"
+    WHERE "u"."Username" = @__username_0)
+2025-06-20 23:04:27.605 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (Size = 17), @p2='?' (Size = 60), @p3='?' (Size = 7)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Users" ("CreatedAt", "Email", "PasswordHash", "Username")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id", "Role";
+2025-06-20 23:04:27.640 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (DbType = DateTime), @p1='?' (DbType = DateTime), @p2='?' (Size = 5), @p3='?' (Size = 8), @p4='?', @p5='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "UserProfiles" ("CreatedAt", "DateOfBirth", "FirstName", "LastName", "PhoneNumber", "UserId")
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5)
+RETURNING "Id";
+2025-06-20 23:04:27.656 +02:00 [INF] Successful registration for user: user123
+2025-06-20 23:04:27.657 +02:00 [INF] Successful registration for user: user123
+2025-06-20 23:04:27.657 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.CreatedResult in 337.6674ms.
+2025-06-20 23:04:27.657 +02:00 [INF] Executing CreatedResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:04:27.658 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI) in 340.6249ms
+2025-06-20 23:04:27.658 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Register (DineEasy.WebAPI)'
+2025-06-20 23:04:27.658 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/register - 201 null application/json; charset=utf-8 341.3694ms
+2025-06-20 23:04:41.713 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 62
+2025-06-20 23:04:41.713 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:04:41.714 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:04:41.714 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:04:41.715 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:04:41.715 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:04:41.715 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:04:41.724 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:04:41.897 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:04:41.897 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:04:41.897 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 182.6452ms.
+2025-06-20 23:04:41.898 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:04:41.898 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 183.8065ms
+2025-06-20 23:04:41.898 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:04:41.898 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 184.6661ms
+2025-06-20 23:06:25.205 +02:00 [INF] Application is shutting down...
+2025-06-20 23:06:28.225 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 23:06:28.256 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 23:06:28.281 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 23:06:28.282 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 23:06:28.283 +02:00 [INF] Hosting environment: Development
+2025-06-20 23:06:28.283 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 23:06:28.846 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 23:06:28.935 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 89.9305ms
+2025-06-20 23:06:28.985 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 23:06:29.087 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 101.9765ms
+2025-06-20 23:06:46.515 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json 62
+2025-06-20 23:06:46.523 +02:00 [INF] CORS policy execution successful.
+2025-06-20 23:06:46.524 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 23:06:46.557 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:06:46.577 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:06:46.611 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:06:46.612 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:06:46.613 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:06:46.787 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:06:46.973 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:06:46.974 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:06:46.976 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 362.5731ms.
+2025-06-20 23:06:46.979 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:06:46.986 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 407.1487ms
+2025-06-20 23:06:46.986 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:06:46.986 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 471.4547ms
+2025-06-20 23:07:01.366 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:07:01.422 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:07:01.424 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:07:01.424 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 58.5009ms
+2025-06-20 23:07:15.585 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations/user/2 - null null
+2025-06-20 23:07:15.588 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.ReservationsController.GetByUserId (DineEasy.WebAPI)'
+2025-06-20 23:07:15.594 +02:00 [INF] Route matched with {action = "GetByUserId", controller = "Reservations"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.IEnumerable`1[DineEasy.SharedKernel.Models.Reservation.ReservationDto]]] GetByUserId(Int32) on controller DineEasy.WebAPI.Controllers.ReservationsController (DineEasy.WebAPI).
+2025-06-20 23:07:15.595 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.ReservationsController.GetByUserId (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:07:15.597 +02:00 [INF] Getting reservations for user ID: 2
+2025-06-20 23:07:15.598 +02:00 [INF] Retrieving all reservations for user ID: 2
+2025-06-20 23:07:15.683 +02:00 [INF] Executed DbCommand (1ms) [Parameters=[@__id_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username", "u0"."Id", "u0"."CreatedAt", "u0"."DateOfBirth", "u0"."FirstName", "u0"."LastName", "u0"."PhoneNumber", "u0"."UserId"
+FROM "Users" AS "u"
+LEFT JOIN "UserProfiles" AS "u0" ON "u"."Id" = "u0"."UserId"
+WHERE "u"."Id" = @__id_0
+LIMIT 1
+2025-06-20 23:07:15.705 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__userId_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "r"."Id", "r"."CreatedAt", "r"."Duration", "r"."PartySize", "r"."ReservationDateTime", "r"."SpecialRequests", "r"."Status", "r"."TableId", "r"."UserId"
+FROM "Reservations" AS "r"
+WHERE "r"."UserId" = @__userId_0
+2025-06-20 23:07:15.706 +02:00 [INF] Successfully retrieved 0 reservations for user ID: 2
+2025-06-20 23:07:15.706 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.ReservationsController.GetByUserId (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 110.7006ms.
+2025-06-20 23:07:15.706 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[DineEasy.SharedKernel.Models.Reservation.ReservationDto, DineEasy.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2025-06-20 23:07:15.714 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.ReservationsController.GetByUserId (DineEasy.WebAPI) in 120.7429ms
+2025-06-20 23:07:15.715 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.ReservationsController.GetByUserId (DineEasy.WebAPI)'
+2025-06-20 23:07:15.715 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations/user/2 - 200 null application/json; charset=utf-8 129.7949ms
+2025-06-20 23:07:31.820 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/TimeSlots/day/1 - null null
+2025-06-20 23:07:31.828 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.TimeSlotsController.GetByDayOfWeek (DineEasy.WebAPI)'
+2025-06-20 23:07:31.832 +02:00 [INF] Route matched with {action = "GetByDayOfWeek", controller = "TimeSlots"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.Application.DTOs.TimeSlot.TimeSlotDto]] GetByDayOfWeek(System.DayOfWeek) on controller DineEasy.WebAPI.Controllers.TimeSlotsController (DineEasy.WebAPI).
+2025-06-20 23:07:31.833 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.TimeSlotsController.GetByDayOfWeek (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:07:31.834 +02:00 [INF] Getting time slot for day: "Monday"
+2025-06-20 23:07:31.840 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__dayOfWeek_0='?' (DbType = Int32)], CommandType='"Text"', CommandTimeout='30']
+SELECT "t"."Id", "t"."DayOfWeek", "t"."EndTime", "t"."StartTime"
+FROM "TimeSlots" AS "t"
+WHERE "t"."DayOfWeek" = @__dayOfWeek_0
+LIMIT 1
+2025-06-20 23:07:31.849 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.TimeSlotsController.GetByDayOfWeek (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 15.9392ms.
+2025-06-20 23:07:31.849 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.Application.DTOs.TimeSlot.TimeSlotDto'.
+2025-06-20 23:07:31.858 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.TimeSlotsController.GetByDayOfWeek (DineEasy.WebAPI) in 25.8338ms
+2025-06-20 23:07:31.858 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.TimeSlotsController.GetByDayOfWeek (DineEasy.WebAPI)'
+2025-06-20 23:07:31.858 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/TimeSlots/day/1 - 200 null application/json; charset=utf-8 38.3413ms
+2025-06-20 23:07:40.562 +02:00 [INF] Application is shutting down...
+2025-06-20 23:44:01.707 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 23:44:01.739 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 23:44:01.763 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 23:44:01.765 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 23:44:01.765 +02:00 [INF] Hosting environment: Development
+2025-06-20 23:44:01.765 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 23:44:02.341 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 23:44:02.429 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 90.0953ms
+2025-06-20 23:44:02.482 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 23:44:02.589 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 107.2656ms
+2025-06-20 23:44:57.865 +02:00 [INF] Application is shutting down...
+2025-06-20 23:45:00.284 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 23:45:00.316 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 23:45:00.340 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 23:45:00.342 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 23:45:00.342 +02:00 [INF] Hosting environment: Development
+2025-06-20 23:45:00.342 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 23:45:00.700 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 23:45:00.788 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 89.0194ms
+2025-06-20 23:45:00.843 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 23:45:00.942 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.3535ms
+2025-06-20 23:45:19.274 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:19.280 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 23:45:19.306 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:19.318 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:19.348 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:45:19.369 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 49.3727ms
+2025-06-20 23:45:19.369 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:19.370 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 95.744ms
+2025-06-20 23:45:29.339 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:29.342 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:29.342 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:29.351 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:45:29.353 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:45:29.354 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:45:29.547 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:45:29.553 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:29.554 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:29.554 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:29.555 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:45:29.555 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:45:29.555 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:45:29.581 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:45:29.742 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:45:29.742 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:45:29.742 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:45:29.742 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:45:29.744 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 390.9212ms.
+2025-06-20 23:45:29.744 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 187.0139ms.
+2025-06-20 23:45:29.745 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:45:29.745 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:45:29.746 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 192.0292ms
+2025-06-20 23:45:29.746 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 403.7234ms
+2025-06-20 23:45:29.746 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:29.746 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:29.746 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 193.484ms
+2025-06-20 23:45:29.746 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 407.4722ms
+2025-06-20 23:45:40.157 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:40.158 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.158 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:40.160 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:45:40.160 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 1.8355ms
+2025-06-20 23:45:40.160 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.160 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 3.8349ms
+2025-06-20 23:45:40.402 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:40.402 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.402 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:40.403 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:45:40.403 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 1.071ms
+2025-06-20 23:45:40.403 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.403 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 1.7877ms
+2025-06-20 23:45:40.838 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:40.841 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.842 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:40.843 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:45:40.843 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 1.3741ms
+2025-06-20 23:45:40.843 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.843 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 5.4899ms
+2025-06-20 23:45:40.951 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:40.951 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.951 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:40.952 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:45:40.952 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 0.6438ms
+2025-06-20 23:45:40.952 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:40.952 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 1.1523ms
+2025-06-20 23:45:41.068 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:41.069 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:41.069 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:41.069 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:45:41.070 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 0.8042ms
+2025-06-20 23:45:41.070 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:41.070 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 1.4427ms
+2025-06-20 23:45:48.384 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:45:48.385 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:48.386 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:45:48.386 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:45:48.386 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:45:48.386 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:45:48.388 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:45:48.555 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:45:48.555 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:45:48.555 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 168.5144ms.
+2025-06-20 23:45:48.555 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:45:48.555 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 169.3858ms
+2025-06-20 23:45:48.555 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:45:48.555 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 170.796ms
+2025-06-20 23:47:17.942 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:47:17.943 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:47:17.944 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:47:17.953 +02:00 [INF] Executing BadRequestObjectResult, writing value of type 'Microsoft.AspNetCore.Mvc.ValidationProblemDetails'.
+2025-06-20 23:47:17.953 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 8.9333ms
+2025-06-20 23:47:17.953 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:47:17.953 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 400 null application/problem+json; charset=utf-8 10.8185ms
+2025-06-20 23:47:24.506 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:47:24.507 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:47:24.507 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:47:24.508 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:47:24.508 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:47:24.508 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:47:24.513 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:47:24.687 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:47:24.688 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:47:24.688 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 179.8235ms.
+2025-06-20 23:47:24.688 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:47:24.688 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 181.2048ms
+2025-06-20 23:47:24.688 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:47:24.688 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 181.8831ms
+2025-06-20 23:47:24.729 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:24.759 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:24.760 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:24.760 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 31.2489ms
+2025-06-20 23:47:32.937 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:32.939 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:32.939 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:32.939 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 2.1858ms
+2025-06-20 23:47:34.958 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:34.960 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:34.960 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:34.960 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 2.1261ms
+2025-06-20 23:47:35.654 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:35.654 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:35.654 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:35.654 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 0.6412ms
+2025-06-20 23:47:40.797 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:40.798 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:40.798 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:40.798 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 0.7521ms
+2025-06-20 23:47:41.127 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:41.127 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:41.128 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:41.128 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 0.5769ms
+2025-06-20 23:47:41.256 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:41.256 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:41.256 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:41.256 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 0.7831ms
+2025-06-20 23:47:41.356 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:47:41.356 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:47:41.356 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:47:41.356 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 0.5027ms
+2025-06-20 23:51:15.633 +02:00 [INF] Application is shutting down...
+2025-06-20 23:52:21.357 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 23:52:21.390 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 23:52:21.413 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 23:52:21.415 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 23:52:21.415 +02:00 [INF] Hosting environment: Development
+2025-06-20 23:52:21.415 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 23:52:21.886 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 23:52:21.975 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 90.4115ms
+2025-06-20 23:52:22.032 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 23:52:22.133 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 101.3072ms
+2025-06-20 23:52:31.172 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:52:31.176 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 23:52:31.198 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:52:31.209 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:52:31.238 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:52:31.239 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:52:31.239 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:52:31.410 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:52:31.597 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:52:31.598 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:52:31.599 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 359.6021ms.
+2025-06-20 23:52:31.602 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:52:31.609 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 398.0372ms
+2025-06-20 23:52:31.609 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:52:31.610 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 437.3479ms
+2025-06-20 23:52:31.658 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:52:31.687 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:52:31.688 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:52:31.688 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 30.2627ms
+2025-06-20 23:53:15.383 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:53:15.387 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:53:15.387 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:53:15.390 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:53:15.390 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:53:15.390 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:53:15.440 +02:00 [INF] Executed DbCommand (0ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:53:15.588 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:53:15.588 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:53:15.589 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 198.2774ms.
+2025-06-20 23:53:15.589 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:53:15.589 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 201.565ms
+2025-06-20 23:53:15.589 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:53:15.589 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 206.5875ms
+2025-06-20 23:53:15.612 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:53:15.613 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:53:15.614 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:53:15.614 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 2.1551ms
+2025-06-20 23:54:08.867 +02:00 [INF] Application is shutting down...
+2025-06-20 23:54:11.699 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2025-06-20 23:54:11.730 +02:00 [INF] User profile is available. Using '/Users/jakubwalkowicz/.aspnet/DataProtection-Keys' as key repository; keys will not be encrypted at rest.
+2025-06-20 23:54:11.757 +02:00 [INF] Now listening on: http://localhost:5049
+2025-06-20 23:54:11.759 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-06-20 23:54:11.759 +02:00 [INF] Hosting environment: Development
+2025-06-20 23:54:11.759 +02:00 [INF] Content root path: /Users/jakubwalkowicz/AGH_II_Semestr/PAB/Projekt_koncowy/DineEasy/DineEasy.WebAPI
+2025-06-20 23:54:12.034 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/index.html - null null
+2025-06-20 23:54:12.125 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/index.html - 200 null text/html;charset=utf-8 91.9425ms
+2025-06-20 23:54:12.197 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - null null
+2025-06-20 23:54:12.295 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.5581ms
+2025-06-20 23:55:47.243 +02:00 [INF] Request starting HTTP/1.1 POST http://localhost:5049/api/Auth/login - application/json; charset=utf-8 null
+2025-06-20 23:55:47.251 +02:00 [WRN] Failed to determine the https port for redirect.
+2025-06-20 23:55:47.273 +02:00 [INF] Executing endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:55:47.288 +02:00 [INF] Route matched with {action = "Login", controller = "Auth"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[DineEasy.SharedKernel.Models.Auth.AuthResponseDto]] Login(DineEasy.SharedKernel.Models.Auth.LoginDto) on controller DineEasy.WebAPI.Controllers.AuthController (DineEasy.WebAPI).
+2025-06-20 23:55:47.317 +02:00 [INF] Executing action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) - Validation state: "Valid"
+2025-06-20 23:55:47.318 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:55:47.319 +02:00 [INF] Login attempt for email: user@dineeasy.com
+2025-06-20 23:55:47.503 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[@__email_0='?' (Size = 17)], CommandType='"Text"', CommandTimeout='30']
+SELECT "u"."Id", "u"."CreatedAt", "u"."Email", "u"."PasswordHash", "u"."Role", "u"."Username"
+FROM "Users" AS "u"
+WHERE "u"."Email" = @__email_0
+LIMIT 1
+2025-06-20 23:55:47.692 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:55:47.692 +02:00 [INF] Successful login for user: user123
+2025-06-20 23:55:47.694 +02:00 [INF] Executed action method DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI), returned result Microsoft.AspNetCore.Mvc.OkObjectResult in 374.6289ms.
+2025-06-20 23:55:47.697 +02:00 [INF] Executing OkObjectResult, writing value of type 'DineEasy.SharedKernel.Models.Auth.AuthResponseDto'.
+2025-06-20 23:55:47.703 +02:00 [INF] Executed action DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI) in 414.1067ms
+2025-06-20 23:55:47.703 +02:00 [INF] Executed endpoint 'DineEasy.WebAPI.Controllers.AuthController.Login (DineEasy.WebAPI)'
+2025-06-20 23:55:47.704 +02:00 [INF] Request finished HTTP/1.1 POST http://localhost:5049/api/Auth/login - 200 null application/json; charset=utf-8 461.8147ms
+2025-06-20 23:55:47.782 +02:00 [INF] Request starting HTTP/1.1 GET http://localhost:5049/api/Reservations - null null
+2025-06-20 23:55:47.811 +02:00 [INF] Authorization failed. These requirements were not met:
+RolesAuthorizationRequirement:User.IsInRole must be true for one of the following roles: (Admin)
+2025-06-20 23:55:47.813 +02:00 [INF] AuthenticationScheme: Bearer was forbidden.
+2025-06-20 23:55:47.813 +02:00 [INF] Request finished HTTP/1.1 GET http://localhost:5049/api/Reservations - 403 0 null 31.0598ms

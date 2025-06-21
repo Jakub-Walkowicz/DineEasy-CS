@@ -1,10 +1,9 @@
-namespace DineEasy.Domain.Enums;
+namespace DineEasy.SharedKernel.Models.Enums;
 
 public enum ReservationStatus
 {
-    Pending = 0,
-    Confirmed = 1,
-    Cancelled = 2,
-    Completed = 3,
-    NoShow = 4
+    Pending,
+    Confirmed,
+    Cancelled,
+    Completed
 }

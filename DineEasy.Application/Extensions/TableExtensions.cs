@@ -1,5 +1,6 @@
 using DineEasy.Application.DTOs.Table;
 using DineEasy.Domain.Entities;
+using DineEasy.SharedKernel.Models.Table;
 
 namespace DineEasy.Application.Extensions;
 

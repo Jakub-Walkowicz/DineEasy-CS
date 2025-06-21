@@ -31,7 +31,7 @@ public class DineEasyDbContext(DbContextOptions<DineEasyDbContext> options) : Db
             new User
             {
                 Id = 1,
-                Username = "admin",
+                Username = "admin123123",
                 Email = "admin@dineeasy.com",
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword("admin123"),
                 Role = UserRole.Admin,

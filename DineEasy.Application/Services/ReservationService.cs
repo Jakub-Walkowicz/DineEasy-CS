@@ -1,9 +1,8 @@
-
-using DineEasy.Application.DTOs.Reservation;
 using DineEasy.Application.Exceptions;
 using DineEasy.Application.Extensions;
 using DineEasy.Application.Interfaces;
 using DineEasy.Domain.Interfaces;
+using DineEasy.SharedKernel.Models.Reservation;
 using Kiosk.WebAPI.Db.Exceptions;
 using Microsoft.Extensions.Logging;
 

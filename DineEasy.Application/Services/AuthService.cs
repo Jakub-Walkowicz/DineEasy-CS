@@ -1,11 +1,11 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using DineEasy.Application.DTOs.Auth;
 using DineEasy.Application.Interfaces;
 using DineEasy.Domain.Entities;
 using DineEasy.Domain.Enums;
 using DineEasy.Domain.Interfaces;
+using DineEasy.SharedKernel.Models.Auth;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;

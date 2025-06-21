@@ -1,21 +1,28 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace DineEasy.Application.DTOs.Auth;
+namespace DineEasy.SharedKernel.Models.Auth;
 
 public class RegisterDto
 {
-    [Required]
+    [Required(ErrorMessage = "Nazwa użytkownika jest wymagana")]
     public string Username { get; set; } = string.Empty;
-    [Required]
-    [EmailAddress]
+    
+    [Required(ErrorMessage = "Email jest wymagany")]
+    [EmailAddress(ErrorMessage = "Nieprawidłowy format email")]
     public string Email { get; set; } = string.Empty;
-    [Required]
+    
+    [Required(ErrorMessage = "Hasło jest wymagane")]
+    [MinLength(6, ErrorMessage = "Hasło musi mieć minimum 6 znaków")]
     public string Password { get; set; } = string.Empty;
-    [Required]
+    
+    [Required(ErrorMessage = "Imię jest wymagane")]
     public string FirstName { get; set; } = string.Empty;
-    [Required]
+    
+    [Required(ErrorMessage = "Nazwisko jest wymagane")]
     public string LastName { get; set; } = string.Empty;
-    [Phone]
+    
+    [Phone(ErrorMessage = "Nieprawidłowy numer telefonu")]
     public string? PhoneNumber { get; set; }
+    
     public DateTime? DateOfBirth { get; set; }
 }

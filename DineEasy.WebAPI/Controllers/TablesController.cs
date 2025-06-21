@@ -1,5 +1,6 @@
 using DineEasy.Application.DTOs.Table;
 using DineEasy.Application.Interfaces;
+using DineEasy.SharedKernel.Models.Table;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 

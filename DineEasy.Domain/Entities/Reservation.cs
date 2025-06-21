@@ -1,4 +1,5 @@
 using DineEasy.Domain.Enums;
+using DineEasy.SharedKernel.Models.Enums;
 
 namespace DineEasy.Domain.Entities;
 

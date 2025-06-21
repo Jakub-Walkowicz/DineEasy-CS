@@ -1,8 +1,6 @@
+using DineEasy.SharedKernel.Models.Enums;
 
-using DineEasy.Application.DTOs.Table;
-using DineEasy.Domain.Enums;
-
-namespace DineEasy.Application.DTOs.Reservation;
+namespace DineEasy.SharedKernel.Models.Reservation;
 
 public class ReservationDetailDto
 {

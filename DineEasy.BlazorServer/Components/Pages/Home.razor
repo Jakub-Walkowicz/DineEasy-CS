@@ -1,7 +1,24 @@
 ﻿@page "/"
 
-<PageTitle>Home</PageTitle>
+<PageTitle>DineEasy</PageTitle>
 
-<h1>Hello, world!</h1>
+<div class="container-fluid p-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8 text-center">
+           
+            <h1 class="display-3 mb-4" style="color: #2c3e50;">🍽️ DineEasy</h1>
+           
+            <p class="lead mb-4">Witamy w aplikacji do rezerwacji stolików</p>
+           
+            <RadzenButton Text="Rozpocznij" 
+                          ButtonStyle="ButtonStyle.Primary" 
+                          Size="ButtonSize.Large"
+                          Click="@(() => { })" />
+           
+        </div>
+    </div>
+</div>
 
-Welcome to your new app.
+@code {
+   
+}

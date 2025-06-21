@@ -1,4 +1,4 @@
-using DineEasy.Application.DTOs.Auth;
+using DineEasy.SharedKernel.Models.Auth;
 
 namespace DineEasy.Application.Interfaces;
 

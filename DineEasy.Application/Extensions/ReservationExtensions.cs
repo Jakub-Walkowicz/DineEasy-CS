@@ -1,5 +1,5 @@
-using DineEasy.Application.DTOs.Reservation;
 using DineEasy.Domain.Entities;
+using DineEasy.SharedKernel.Models.Reservation;
 
 namespace DineEasy.Application.Extensions;
 

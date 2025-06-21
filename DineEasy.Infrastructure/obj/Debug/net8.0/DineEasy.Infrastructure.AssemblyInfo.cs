@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DineEasy.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+93bd51d6a004501d88792b82e78a810415f8edf7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+adabd551b086ba6d1ddac165c673aa648863c92e")]
 [assembly: System.Reflection.AssemblyProductAttribute("DineEasy.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DineEasy.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

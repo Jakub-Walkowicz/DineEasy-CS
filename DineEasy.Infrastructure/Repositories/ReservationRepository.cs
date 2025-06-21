@@ -2,6 +2,7 @@ using DineEasy.Domain.Entities;
 using DineEasy.Domain.Enums;
 using DineEasy.Domain.Interfaces;
 using DineEasy.Infrastructure.Data;
+using DineEasy.SharedKernel.Models.Enums;
 using Microsoft.EntityFrameworkCore;
 
 namespace DineEasy.Infrastructure.Repositories;

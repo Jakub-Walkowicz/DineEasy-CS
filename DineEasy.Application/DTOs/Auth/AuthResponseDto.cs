@@ -1,4 +1,4 @@
-namespace DineEasy.Application.DTOs.Auth;
+namespace DineEasy.SharedKernel.Models.Auth;
 
 public class AuthResponseDto
 {
