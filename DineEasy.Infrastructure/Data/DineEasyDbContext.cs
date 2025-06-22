@@ -58,8 +58,13 @@ public class DineEasyDbContext(DbContextOptions<DineEasyDbContext> options) : Db
         );
         
         modelBuilder.Entity<TimeSlot>().HasData(
-            new TimeSlot { Id = 1, StartTime = new TimeOnly(18, 0), EndTime = new TimeOnly(19, 0), DayOfWeek = DayOfWeek.Monday },
-            new TimeSlot { Id = 2, StartTime = new TimeOnly(19, 0), EndTime = new TimeOnly(20, 0), DayOfWeek = DayOfWeek.Monday }
+            new TimeSlot { Id = 1, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Monday },
+            new TimeSlot { Id = 2, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Tuesday },
+            new TimeSlot { Id = 3, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Wednesday },
+            new TimeSlot { Id = 4, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Thursday },
+            new TimeSlot { Id = 5, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Friday },
+            new TimeSlot { Id = 6, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Saturday },
+            new TimeSlot { Id = 7, StartTime = new TimeOnly(10, 0), EndTime = new TimeOnly(22, 0), DayOfWeek = DayOfWeek.Sunday }
         );
     }
     
