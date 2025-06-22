@@ -13,7 +13,7 @@ public class TablesController(ITableService tableService, ILogger<TablesControll
     : ControllerBase
 {
     [HttpGet]
-    [Authorize(Roles = "Admin,User")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<List<TableDto>>> GetAll()
     {
         logger.LogInformation("Getting all tables");
@@ -22,7 +22,7 @@ public class TablesController(ITableService tableService, ILogger<TablesControll
     }
 
     [HttpGet("{id:int}")]
-    [Authorize(Roles = "Admin,User")]
+    [Authorize(Roles = "Admin")]
     public async Task<ActionResult<TableDto>> GetById(int id)
     {
         try

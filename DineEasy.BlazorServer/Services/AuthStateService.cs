@@ -1,4 +1,6 @@
 using Microsoft.JSInterop;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
 
 namespace DineEasy.BlazorServer.Services;
 
@@ -10,6 +12,8 @@ public class AuthStateService
     public bool IsAuthenticated { get; private set; }
     public string? Username { get; private set; }
     public string? Token => _token;
+    public bool IsAdmin { get; private set; }
+    public List<string> Roles { get; private set; } = new();
     
     public event Action? OnChange;
 
@@ -24,6 +28,9 @@ public class AuthStateService
         Username = username;
         _token = token;
         
+        // Dekoduj token JWT i wyciągnij role
+        ExtractRolesFromToken(token);
+        
         // Zapisz token w localStorage
         await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
         await _jsRuntime.InvokeVoidAsync("localStorage.setItem", "username", username);
@@ -36,6 +43,8 @@ public class AuthStateService
         IsAuthenticated = false;
         Username = null;
         _token = null;
+        IsAdmin = false;
+        Roles.Clear();
         
         // Usuń token z localStorage
         await _jsRuntime.InvokeVoidAsync("localStorage.removeItem", "authToken");
@@ -59,12 +68,23 @@ public class AuthStateService
 
             if (!string.IsNullOrEmpty(token) && !string.IsNullOrEmpty(username))
             {
-                IsAuthenticated = true;
-                Username = username;
-                _token = token;
-
-                // Dodaj to:
-                OnChange?.Invoke();
+                // Sprawdź czy token nie wygasł
+                if (IsTokenValid(token))
+                {
+                    IsAuthenticated = true;
+                    Username = username;
+                    _token = token;
+                    
+                    // Dekoduj token JWT i wyciągnij role
+                    ExtractRolesFromToken(token);
+                    
+                    OnChange?.Invoke();
+                }
+                else
+                {
+                    // Token wygasł, wyloguj użytkownika
+                    await SetUnauthenticatedAsync();
+                }
             }
         }
         catch (JSException)
@@ -73,4 +93,48 @@ public class AuthStateService
         }
     }
 
+    private void ExtractRolesFromToken(string token)
+    {
+        try
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadJwtToken(token);
+            
+            // Wyciągnij role z claims
+            Roles = jsonToken.Claims
+                .Where(c => c.Type == ClaimTypes.Role || c.Type == "role")
+                .Select(c => c.Value)
+                .ToList();
+            
+            // Sprawdź czy użytkownik jest adminem
+            IsAdmin = Roles.Contains("Admin");
+        }
+        catch (Exception)
+        {
+            // Jeśli nie udało się zdekodować tokenu, ustaw domyślne wartości
+            Roles = new List<string>();
+            IsAdmin = false;
+        }
+    }
+
+    private bool IsTokenValid(string token)
+    {
+        try
+        {
+            var handler = new JwtSecurityTokenHandler();
+            var jsonToken = handler.ReadJwtToken(token);
+            
+            // Sprawdź czy token nie wygasł
+            return jsonToken.ValidTo > DateTime.UtcNow;
+        }
+        catch
+        {
+            return false;
+        }
+    }
+
+    public bool HasRole(string role)
+    {
+        return Roles.Contains(role);
+    }
 }

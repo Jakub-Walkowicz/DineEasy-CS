@@ -133,6 +133,10 @@
             "Radzen.Blazor": {
               "target": "Package",
               "version": "[7.1.1, )"
+            },
+            "System.IdentityModel.Tokens.Jwt": {
+              "target": "Package",
+              "version": "[8.12.1, )"
             }
           },
           "imports": [

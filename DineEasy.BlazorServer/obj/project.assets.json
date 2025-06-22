@@ -1317,7 +1317,8 @@
     "net8.0": [
       "DineEasy.Application >= 1.0.0",
       "DineEasy.SharedKernel >= 1.0.0",
-      "Radzen.Blazor >= 7.1.1"
+      "Radzen.Blazor >= 7.1.1",
+      "System.IdentityModel.Tokens.Jwt >= 8.12.1"
     ]
   },
   "packageFolders": {
@@ -1373,6 +1374,10 @@
           "Radzen.Blazor": {
             "target": "Package",
             "version": "[7.1.1, )"
+          },
+          "System.IdentityModel.Tokens.Jwt": {
+            "target": "Package",
+            "version": "[8.12.1, )"
           }
         },
         "imports": [

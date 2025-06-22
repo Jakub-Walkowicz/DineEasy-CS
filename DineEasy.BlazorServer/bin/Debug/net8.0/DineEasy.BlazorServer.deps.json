@@ -10,7 +10,8 @@
         "dependencies": {
           "DineEasy.Application": "1.0.0",
           "DineEasy.SharedKernel": "1.0.0",
-          "Radzen.Blazor": "7.1.1"
+          "Radzen.Blazor": "7.1.1",
+          "System.IdentityModel.Tokens.Jwt": "8.12.1"
         },
         "runtime": {
           "DineEasy.BlazorServer.dll": {}

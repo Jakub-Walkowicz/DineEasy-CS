@@ -4,6 +4,7 @@ namespace DineEasy.Application.DTOs.Table;
 
 public class CreateTableDto
 {
+    public int Id { get; set; }
     [Required]
     public int TableNumber { get; set; }  
     [Required]

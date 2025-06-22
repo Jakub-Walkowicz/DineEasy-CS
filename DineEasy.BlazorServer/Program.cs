@@ -29,6 +29,11 @@ builder.Services.AddHttpClient<IAuthApiClient, AuthApiClient>(client =>
     })
     .AddHttpMessageHandler<AuthTokenHandler>();
 
+builder.Services.AddHttpClient<ITableApiClient, TableApiClient>(client =>
+{
+    client.BaseAddress = new Uri("http://localhost:5049"); 
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
